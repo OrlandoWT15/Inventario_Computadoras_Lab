@@ -18,6 +18,7 @@ namespace BusinessLayer
             keyDAL = new DAL(cadenaCn);
         }
 
+        /*Prueba de conexion*/
         public string PruebaConexion()
         {
             string salida = "";
