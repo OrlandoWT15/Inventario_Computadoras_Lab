@@ -20,18 +20,18 @@ namespace DataAccessLayer
         }
 
         /* Para la cadena de Conexión */
-        public SqlConnection AbrirPuerta(ref string Mensaje)
+        public SqlConnection EstadoCn(ref string estado)
         {
             SqlConnection conexion = new SqlConnection();
             conexion.ConnectionString = Conexion;
             try
             {
                 conexion.Open();
-                Mensaje = "Puerta Abierta";
+                estado = "Abierto";
             }
             catch (Exception h)
             {
-                Mensaje = "ERROR:" + h.Message;
+                estado = "Advertencia!!! ;" + h.Message;
                 conexion = null;
             }
             return conexion;

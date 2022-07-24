@@ -8,6 +8,7 @@ namespace Entity
 {
     public class DiscoDuro
     {
+        public int id { get; set; }
         public string TipoDisco { get; set; }
         public string Conector { get; set; }
         public string Capacidad { get; set; }

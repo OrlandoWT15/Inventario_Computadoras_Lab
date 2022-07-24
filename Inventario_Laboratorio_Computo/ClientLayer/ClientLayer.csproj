@@ -43,9 +43,6 @@
     <Reference Include="BusinessLayer">
       <HintPath>..\BusinessLayer\bin\Debug\BusinessLayer.dll</HintPath>
     </Reference>
-    <Reference Include="DataAccessLayer">
-      <HintPath>..\DataAccessLayer\bin\Debug\DataAccessLayer.dll</HintPath>
-    </Reference>
     <Reference Include="Entity">
       <HintPath>..\Entity\bin\Debug\Entity.dll</HintPath>
     </Reference>

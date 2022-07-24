@@ -4,8 +4,8 @@ C:\Users\Orlando\Documents\Mis Documentos\Materias\DWeb Integral\Producto 2 y 3\
 C:\Users\Orlando\Documents\Mis Documentos\Materias\DWeb Integral\Producto 2 y 3\www\Inventario_Laboratorio_Computo\BusinessLayer\bin\Debug\Entity.dll
 C:\Users\Orlando\Documents\Mis Documentos\Materias\DWeb Integral\Producto 2 y 3\www\Inventario_Laboratorio_Computo\BusinessLayer\bin\Debug\DataAccessLayer.pdb
 C:\Users\Orlando\Documents\Mis Documentos\Materias\DWeb Integral\Producto 2 y 3\www\Inventario_Laboratorio_Computo\BusinessLayer\bin\Debug\Entity.pdb
-C:\Users\Orlando\Documents\Mis Documentos\Materias\DWeb Integral\Producto 2 y 3\www\Inventario_Laboratorio_Computo\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
 C:\Users\Orlando\Documents\Mis Documentos\Materias\DWeb Integral\Producto 2 y 3\www\Inventario_Laboratorio_Computo\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
 C:\Users\Orlando\Documents\Mis Documentos\Materias\DWeb Integral\Producto 2 y 3\www\Inventario_Laboratorio_Computo\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
 C:\Users\Orlando\Documents\Mis Documentos\Materias\DWeb Integral\Producto 2 y 3\www\Inventario_Laboratorio_Computo\BusinessLayer\obj\Debug\BusinessLayer.dll
 C:\Users\Orlando\Documents\Mis Documentos\Materias\DWeb Integral\Producto 2 y 3\www\Inventario_Laboratorio_Computo\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\Orlando\Documents\Mis Documentos\Materias\DWeb Integral\Producto 2 y 3\www\Inventario_Laboratorio_Computo\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
