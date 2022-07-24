@@ -8,6 +8,7 @@ namespace Entity
 {
     public class Monitor
     {
+        public int Id { get; set; }
         public int F_marcam { get; set; }
         public string  Conectores { get; set; }
         public string  Tamanio { get; set; }

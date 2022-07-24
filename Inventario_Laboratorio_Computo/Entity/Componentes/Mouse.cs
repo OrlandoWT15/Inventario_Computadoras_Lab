@@ -8,6 +8,7 @@ namespace Entity
 {
     public class Mouse
     {
+        public int Id { get; set; }
         public int F_marcamouse { get; set; }
         public string conector { get; set; }
 

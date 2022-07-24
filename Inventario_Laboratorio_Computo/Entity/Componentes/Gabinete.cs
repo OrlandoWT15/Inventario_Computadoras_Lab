@@ -8,6 +8,7 @@ namespace Entity
 {
     public class Gabinete
     {
+        public int Id { get; set; }
         public string Modelo { get; set; }
         public string TipoForma { get; set; }
         public int F_Marca { get; set; }

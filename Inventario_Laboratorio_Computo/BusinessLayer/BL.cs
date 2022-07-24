@@ -17,6 +17,8 @@ namespace BusinessLayer
         private Com_DiscoDuro_BL key_DDBL = new Com_DiscoDuro_BL();
         private Com_RAM_BL key_RBL = new Com_RAM_BL();
         private Com_CPU_BL key_CPUBL = new Com_CPU_BL();
+        private Com_Perifericos_BL key_PBL = new Com_Perifericos_BL();
+        private Com_Gabinete_BL key_GBL = new Com_Gabinete_BL();
 
         public BL(string cadenaCn)
         {
@@ -613,6 +615,320 @@ namespace BusinessLayer
         }
         /************************************************************/
         /*#########################################################*/
+
+        /************************************************************/
+        /*                     M O N I T O R                       */
+        public Boolean AgregarMonitor(Monitor newMoni, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_PBL.AgregandoMonitor(newMoni, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public DataTable InfoMonitor(ref string estado, ref string salida)
+        {
+            string instruccion = "";
+            DataSet obtener = null;
+            DataTable tabla = null;
+
+            if (key_PBL.MostrarMonitor(ref instruccion))
+            {
+                obtener = keyDAL.DBLectura(instruccion, keyDAL.EstadoCn(ref estado), ref salida);
+                if (obtener != null)
+                {
+                    tabla = obtener.Tables[0];
+                }
+            }
+            return tabla;
+        }
+        public Boolean ActualizarMonitor(Monitor newMoni, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_PBL.ModificarMonitor(newMoni, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public Boolean EliminarMonitor(Monitor dropMoni, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_PBL.DropMonitor(dropMoni, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        /************************************************************/
+        /*                     T E C L A D O                       */
+        public Boolean AgregarTeclado(Teclado newTecl, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_PBL.AgregandoTeclado(newTecl, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public DataTable InfoTeclado(ref string estado, ref string salida)
+        {
+            string instruccion = "";
+            DataSet obtener = null;
+            DataTable tabla = null;
+
+            if (key_PBL.MostrarTeclado(ref instruccion))
+            {
+                obtener = keyDAL.DBLectura(instruccion, keyDAL.EstadoCn(ref estado), ref salida);
+                if (obtener != null)
+                {
+                    tabla = obtener.Tables[0];
+                }
+            }
+            return tabla;
+        }
+        public Boolean ActualizarTeclado(Teclado newTecl, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_PBL.ModificarTeclado(newTecl, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public Boolean EliminarTeclado(Teclado dropTecl, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_PBL.DropTeclado(dropTecl, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        /************************************************************/
+        /*                        M O U S E                       */
+        public Boolean AgregarMouse(Mouse newMouse, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_PBL.AgregandoMouse(newMouse, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public DataTable InfoMouse(ref string estado, ref string salida)
+        {
+            string instruccion = "";
+            DataSet obtener = null;
+            DataTable tabla = null;
+
+            if (key_PBL.MostrarMouse(ref instruccion))
+            {
+                obtener = keyDAL.DBLectura(instruccion, keyDAL.EstadoCn(ref estado), ref salida);
+                if (obtener != null)
+                {
+                    tabla = obtener.Tables[0];
+                }
+            }
+            return tabla;
+        }
+        public Boolean ActualizarMouse(Mouse newMouse, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_PBL.ModificarMouse(newMouse, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public Boolean EliminarMouse(Mouse dropMouse, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_PBL.DropMouse(dropMouse, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        /*                   A D I C I O N A L                  */
+
+        /************************************************************/
+        /*#########################################################*/
+
+        /************************************************************/
+        /*                     G A B I N E T E                     */
+        public Boolean AgregarGabinete(Gabinete newGabi, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_GBL.AgregandoGabinete(newGabi, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public DataTable InfoGabinete(ref string estado, ref string salida)
+        {
+            string instruccion = "";
+            DataSet obtener = null;
+            DataTable tabla = null;
+
+            if (key_GBL.MostrarGabinete(ref instruccion))
+            {
+                obtener = keyDAL.DBLectura(instruccion, keyDAL.EstadoCn(ref estado), ref salida);
+                if (obtener != null)
+                {
+                    tabla = obtener.Tables[0];
+                }
+            }
+            return tabla;
+        }
+        public Boolean ActualizarGabinete(Gabinete newGabi, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_GBL.ModificarGabinete(newGabi, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public Boolean EliminarGabinete(Gabinete dropGabi, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_GBL.DropGabinete(dropGabi, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        /*                   A D I C I O N A L                  */
+
+        /************************************************************/
+        /*#########################################################*/
+
+        /************************************************************/
+        /*          I M A G E N E S   C P U                     */
+
 
     }
 }

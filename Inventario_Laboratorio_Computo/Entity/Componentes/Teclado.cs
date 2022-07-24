@@ -8,6 +8,7 @@ namespace Entity
 {
     public class Teclado
     {
+        public int Id { get; set; }
         public int F_marcat { get; set; }
         public string Conector { get; set; }
         public string Info()
