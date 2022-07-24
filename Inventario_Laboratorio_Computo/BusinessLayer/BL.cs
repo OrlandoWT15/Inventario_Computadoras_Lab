@@ -13,7 +13,9 @@ namespace BusinessLayer
     public class BL
     {
         private DAL keyDAL = null;
-        private Com_DiscoDuro_BL key_DDBL = new Com_DiscoDuro_BL(); 
+        //Business layer de componentes de una computadora
+        private Com_DiscoDuro_BL key_DDBL = new Com_DiscoDuro_BL();
+        private Com_RAM_BL key_RBL = new Com_RAM_BL();
 
         public BL(string cadenaCn)
         {
@@ -198,7 +200,172 @@ namespace BusinessLayer
 
         /************************************************************/
         /*                   R A M                                 */
+        public Boolean AgregarRAM(RAM newRAM, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
 
+            estado = "";
+            salida = "";
+
+            if (key_RBL.AgregandoRam(newRAM, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public DataTable InfoRAM(ref string estado, ref string salida)
+        {
+            string instruccion = "";
+            DataSet obtener = null;
+            DataTable tabla = null;
+
+            if (key_RBL.MostrarRAM(ref instruccion))
+            {
+                obtener = keyDAL.DBLectura(instruccion, keyDAL.EstadoCn(ref estado), ref salida);
+                if (obtener != null)
+                {
+                    tabla = obtener.Tables[0];
+                }
+            }
+            return tabla;
+        }
+        public Boolean ActualizarRAM(RAM newRAM, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_RBL.ModificarRAM(newRAM, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public Boolean EliminarRAM(RAM dropRAM, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_RBL.DropRAM(dropRAM, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
         /************************************************************/
+        /*                     T I P O   R A M                     */
+        public Boolean AgregarTipoRAM(TipoRAM newTRAM, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_RBL.AgregandoTipoRam(newTRAM, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public DataTable InfoTipoRAM(ref string estado, ref string salida)
+        {
+            string instruccion = "";
+            DataSet obtener = null;
+            DataTable tabla = null;
+
+            if (key_RBL.MostrarTipoRAM(ref instruccion))
+            {
+                obtener = keyDAL.DBLectura(instruccion, keyDAL.EstadoCn(ref estado), ref salida);
+                if (obtener != null)
+                {
+                    tabla = obtener.Tables[0];
+                }
+            }
+            return tabla;
+        }
+        public Boolean ActualizarTipoRAM(TipoRAM newTRAM, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_RBL.ModificarTipoRAM(newTRAM, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public Boolean EliminarTipoRAM(TipoRAM dropTRAM, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_RBL.DropTipoRAM(dropTRAM, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        /*                   A D I C I O N A L                  */
+        public DataTable InfoRAMCompleto(ref string estado, ref string salida)
+        {
+            string instruccion = "";
+            DataSet obtener = null;
+            DataTable tabla = null;
+
+            if (key_RBL.MostrarRAMCompleto(ref instruccion))
+            {
+                obtener = keyDAL.DBLectura(instruccion, keyDAL.EstadoCn(ref estado), ref salida);
+                if (obtener != null)
+                {
+                    tabla = obtener.Tables[0];
+                }
+            }
+            return tabla;
+        }
+        /************************************************************/
+        /*#########################################################*/
     }
 }

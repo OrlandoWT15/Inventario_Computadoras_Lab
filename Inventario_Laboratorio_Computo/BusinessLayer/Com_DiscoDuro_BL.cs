@@ -156,11 +156,13 @@ namespace BusinessLayer
 
                 evaluacion = new SqlParameter[]
                 {
+                    new SqlParameter("@id_can",SqlDbType.Int),
                    new SqlParameter("@num_inv",SqlDbType.VarChar,10),
                    new SqlParameter("@id_Disco",SqlDbType.Int),
                 };
-                evaluacion[0].Value = newCDDuro.num_inv;
-                evaluacion[1].Value = newCDDuro.F_Dico;
+                evaluacion[0].Value = newCDDuro.id;
+                evaluacion[1].Value = newCDDuro.num_inv;
+                evaluacion[2].Value = newCDDuro.F_Dico;
 
                 respuesta = true;
             }

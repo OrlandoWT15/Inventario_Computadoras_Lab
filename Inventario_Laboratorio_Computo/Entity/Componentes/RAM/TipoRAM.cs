@@ -8,6 +8,7 @@ namespace Entity
 {
     public class TipoRAM
     {
+        public int Id { get; set; }
         public string Tipo { get; set; }
         public string Extra { get; set; }
 
