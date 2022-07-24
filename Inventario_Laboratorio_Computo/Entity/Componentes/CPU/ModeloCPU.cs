@@ -8,6 +8,7 @@ namespace Entity
 {
     public class ModeloCPU
     {
+        public int Id { get; set; }
         public string modeloCPU { get; set; }
         public int F_Marca { get; set; }
 

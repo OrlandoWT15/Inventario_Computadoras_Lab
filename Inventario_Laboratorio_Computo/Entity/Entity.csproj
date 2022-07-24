@@ -46,6 +46,7 @@
     <Compile Include="Componentes\DiscoDuro\CantDisc.cs" />
     <Compile Include="Componentes\DiscoDuro\DiscoDuro.cs" />
     <Compile Include="Componentes\Gabinete.cs" />
+    <Compile Include="Componente_Marca.cs" />
     <Compile Include="ComputadoraFinal.cs" />
     <Compile Include="Componentes\CPU\CPU_Generico.cs" />
     <Compile Include="Componentes\CPU\Tipo_CPU.cs" />

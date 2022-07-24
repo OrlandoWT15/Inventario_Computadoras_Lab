@@ -48,7 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BL.cs" />
+    <Compile Include="Com_CPU_BL.cs" />
     <Compile Include="Com_DiscoDuro_BL.cs" />
+    <Compile Include="Com_RAM_BL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

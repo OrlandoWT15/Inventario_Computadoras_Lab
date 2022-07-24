@@ -74,5 +74,89 @@ namespace ClientLayer
 
 
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            string mensaje = "", estado = "";
+            /*Insertar*/
+            //keyBL.AgregarRAM(new RAM()
+            //{
+            //    Capacidad = 16,
+            //    Velocidad = "2500",
+            //    F_TipoR = 8,
+            //}, ref estado, ref mensaje);
+            //Button2.Text = mensaje;
+            /*Insertar*/
+
+            /*Mostrar*/
+            //DataTable infodd = null;
+            //infodd = keyBL.InfoRAMCompleto(ref estado, ref mensaje);
+            //if (infodd != null)
+            //{
+            //    Button2.Text = mensaje;
+            //}
+            /*Mostrar*/
+
+            /*Actualizar*/
+            //keyBL.ActualizarRAM(new RAM()
+            //{
+            //    Id = 7,
+            //    Capacidad = 16,
+            //    Velocidad = "3600",
+            //    F_TipoR = 8
+            //}, ref estado, ref mensaje);
+            //Button2.Text = mensaje;
+            /*Actualizar*/
+
+            /*Eliminar*/
+            //keyBL.EliminarRAM(new RAM()
+            //{
+            //    Id = 7,
+            //}, ref estado, ref mensaje);
+            //Button2.Text = mensaje;
+            /*Eliminar*/
+        }
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            string mensaje = "", estado = "";
+            /*Insertar*/
+            //keyBL.AgregarCPUModelo(new ModeloCPU()
+            //{
+            //    modeloCPU = "Ryzen 7",
+            //    F_Marca = 24
+            //}, ref estado, ref mensaje);
+            //Button3.Text = mensaje;
+            /*Insertar*/
+
+            /*Mostrar*/
+            //DataTable infodd = null;
+            //infodd = keyBL.InfoCPUGenericoCompleto(ref estado, ref mensaje);
+            //if (infodd != null)
+            //{
+            //    Button3.Text = mensaje+" Muestra correcta";
+            //}
+            /*Mostrar*/
+
+            /*Actualizar*/
+            //keyBL.ActualizarCPUTipo(new Tipo_CPU()
+            //{
+            //    Id = 15,
+            //    Tipo = "Ryzen 5 5600G",
+            //    Familia = "AMD Ryzen™ Processors",
+            //    Velocidad = "3GHz",
+            //    Extra = "",
+            //    F_Modelocpu = 13
+            //}, ref estado, ref mensaje);
+            //Button3.Text = mensaje;
+            /*Actualizar*/
+
+            /*Eliminar*/
+            //keyBL.EliminarCPUGenerico(new CPU_Generico()
+            //{
+            //    id = 14,
+            //}, ref estado, ref mensaje);
+            //Button3.Text = mensaje;
+            /*Eliminar*/
+        }
     }
 }

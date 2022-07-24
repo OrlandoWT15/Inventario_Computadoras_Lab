@@ -3,4 +3,3 @@ C:\Users\Orlando\Documents\Mis Documentos\Materias\DWeb Integral\Producto 2 y 3\
 C:\Users\Orlando\Documents\Mis Documentos\Materias\DWeb Integral\Producto 2 y 3\www\Inventario_Laboratorio_Computo\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
 C:\Users\Orlando\Documents\Mis Documentos\Materias\DWeb Integral\Producto 2 y 3\www\Inventario_Laboratorio_Computo\Entity\obj\Debug\Entity.dll
 C:\Users\Orlando\Documents\Mis Documentos\Materias\DWeb Integral\Producto 2 y 3\www\Inventario_Laboratorio_Computo\Entity\obj\Debug\Entity.pdb
-C:\Users\Orlando\Documents\Mis Documentos\Materias\DWeb Integral\Producto 2 y 3\www\Inventario_Laboratorio_Computo\Entity\obj\Debug\Entity.csproj.AssemblyReference.cache

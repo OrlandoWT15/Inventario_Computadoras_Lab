@@ -10,7 +10,9 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Button ID="Button1" runat="server" Text="Establecer Conexion" OnClick="Button1_Click" />
+            <asp:Button ID="Button1" runat="server" Text="Discoduro" OnClick="Button1_Click" />
+            <asp:Button ID="Button2" runat="server" Text="RAM" OnClick="Button2_Click" />
+            <asp:Button ID="Button3" runat="server" Text="CPU" OnClick="Button3_Click" />
         </div>
     </form>
 </body>

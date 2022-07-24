@@ -8,6 +8,7 @@ namespace Entity
 {
     public class CPU_Generico
     {
+        public int id { get; set; }
         public int F_Tcpu { get; set; }
         public int F_Marca { get; set; }
         public string Modelo { get; set; }

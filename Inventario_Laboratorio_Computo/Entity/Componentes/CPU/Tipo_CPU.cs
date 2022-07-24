@@ -8,11 +8,12 @@ namespace Entity
 {
     public class Tipo_CPU
     {
+        public int Id { get; set; }
         public string Tipo { get; set; }
         public string Familia { get; set; }
         public string Velocidad { get; set; }
         public string Extra { get; set; }
-        public string F_Modelocpu { get; set; }
+        public int F_Modelocpu { get; set; }
         public string Info()
         {
             return Tipo + Familia + Velocidad + Extra + F_Modelocpu;
