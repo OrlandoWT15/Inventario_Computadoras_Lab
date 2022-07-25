@@ -47,13 +47,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actualizacion_BL.cs" />
     <Compile Include="BL.cs" />
+    <Compile Include="ComputadoraFinal_BL.cs" />
+    <Compile Include="Com_Componente_BL.cs" />
     <Compile Include="Com_CPU_BL.cs" />
     <Compile Include="Com_DiscoDuro_BL.cs" />
     <Compile Include="Com_Gabinete_BL.cs" />
+    <Compile Include="Img_Imagenes_BL.cs" />
     <Compile Include="Com_Perifericos_BL.cs" />
     <Compile Include="Com_RAM_BL.cs" />
+    <Compile Include="Marca_BL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ubi_Ubicacion_BL.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -13,6 +13,7 @@
             <asp:Button ID="Button1" runat="server" Text="Discoduro" OnClick="Button1_Click" />
             <asp:Button ID="Button2" runat="server" Text="RAM" OnClick="Button2_Click" />
             <asp:Button ID="Button3" runat="server" Text="CPU" OnClick="Button3_Click" />
+            <asp:Button ID="Button4" runat="server" Text="Computadora Final" OnClick="Button4_Click" />
         </div>
     </form>
 </body>

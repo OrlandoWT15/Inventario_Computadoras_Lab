@@ -158,5 +158,59 @@ namespace ClientLayer
             //Button3.Text = mensaje;
             /*Eliminar*/
         }
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            string mensaje = "", estado = "";
+            /*Insertar*/
+            //keyBL.AgregarCompFinal(new ComputadoraFinal()
+            //{
+            //    num_inv = "2",
+            //    num_scpu = "2",
+            //    F_cpug = 12,
+            //    num_steclado = "2",
+            //    F_tecladog = 6,
+            //    num_smonitor = "2",
+            //    F_mong = 5,
+            //    num_smouse = "2",
+            //    F_mouseg = 5,
+            //    Estado = "K1"
+            //}, ref estado, ref mensaje);
+            //Button4.Text = mensaje;
+            /*Insertar*/
+
+            /*Mostrar*/
+            //DataTable infodd = null;
+            //infodd = keyBL.InfoCompFinalCompleto(ref estado, ref mensaje);
+            //if (infodd != null)
+            //{
+            //    Button4.Text = mensaje + " Muestra correcta";
+            //}
+            /*Mostrar*/
+
+            /*Actualizar*/
+            //keyBL.ActualizarCompFinal(new ComputadoraFinal()
+            //{
+            //    num_inv = "2",
+            //    num_scpu = "2",
+            //    F_cpug = 12,
+            //    num_steclado = "2",
+            //    F_tecladog = 6,
+            //    num_smonitor = "2",
+            //    F_mong = 5,
+            //    num_smouse = "2",
+            //    F_mouseg = 5,
+            //    Estado = "k5"
+            //}, ref estado, ref mensaje);
+            //Button4.Text = mensaje;
+            /*Actualizar*/
+
+            /*Eliminar*/
+            //keyBL.EliminarCompFinal(new ComputadoraFinal()
+            //{
+            //    num_inv = "2",
+            //}, ref estado, ref mensaje);
+            //Button4.Text = mensaje;
+            /*Eliminar*/
+        }
     }
 }

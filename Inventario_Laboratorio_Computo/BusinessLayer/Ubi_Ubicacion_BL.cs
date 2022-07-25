@@ -167,7 +167,7 @@ namespace BusinessLayer
 
             if (evaluacion == null)
             {
-                instruccion = "DELETE FROM laboratorio where where nombre_laboratorio = @nombre_laboratorio;";
+                instruccion = "DELETE FROM laboratorio where nombre_laboratorio = @nombre_laboratorio;";
                 evaluacion = new SqlParameter[]
                 {
                 new SqlParameter("@nombre_laboratorio",SqlDbType.VarChar,64),

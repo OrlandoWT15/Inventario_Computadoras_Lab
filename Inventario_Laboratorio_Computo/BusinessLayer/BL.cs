@@ -30,7 +30,7 @@ namespace BusinessLayer
         //Business layer de Marca
         private Marca_BL key_MBL = new Marca_BL();
         //Business layer de Computadora Final
-        private ComputadoraFinal_BL key_CF = new ComputadoraFinal_BL();
+        private ComputadoraFinal_BL key_CFBL = new ComputadoraFinal_BL();
 
         public BL(string cadenaCn)
         {
@@ -1095,7 +1095,7 @@ namespace BusinessLayer
 
         /************************************************************/
         /*               L A B O R A T O R I O                     */
-        public Boolean AgregarLaboratorio(Laboratorio newImaLab, ref string estado, ref string salida)
+        public Boolean AgregarLaboratorio(Laboratorio newLab, ref string estado, ref string salida)
         {
             SqlParameter[] parametro = null;
             string comando = "";
@@ -1104,7 +1104,7 @@ namespace BusinessLayer
             estado = "";
             salida = "";
 
-            if (key_UBL.AgregandoLaboratorio(newImaLab, ref parametro, ref comando))
+            if (key_UBL.AgregandoLaboratorio(newLab, ref parametro, ref comando))
             {
                 respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
             }
@@ -1130,7 +1130,7 @@ namespace BusinessLayer
             }
             return tabla;
         }
-        public Boolean ActualizarLaboratorio(Laboratorio newImaLab, ref string estado, ref string salida)
+        public Boolean ActualizarLaboratorio(Laboratorio newLab, ref string estado, ref string salida)
         {
             SqlParameter[] parametro = null;
             string comando = "";
@@ -1139,7 +1139,7 @@ namespace BusinessLayer
             estado = "";
             salida = "";
 
-            if (key_UBL.ModificarLaboratorio(newImaLab, ref parametro, ref comando))
+            if (key_UBL.ModificarLaboratorio(newLab, ref parametro, ref comando))
             {
                 respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
             }
@@ -1149,7 +1149,7 @@ namespace BusinessLayer
             }
             return respuesta;
         }
-        public Boolean EliminarLaboratorio(Laboratorio dropImaLab, ref string estado, ref string salida)
+        public Boolean EliminarLaboratorio(Laboratorio dropLab, ref string estado, ref string salida)
         {
             SqlParameter[] parametro = null;
             string comando = "";
@@ -1250,7 +1250,7 @@ namespace BusinessLayer
 
         /************************************************************/
         /*                 A C T U A L I Z A C I O N               */
-        public Boolean AgregarImagenesUbicacion(Ubicacion newImaUbicacion, ref string estado, ref string salida)
+        public Boolean AgregarActualizacion(Actualizacion newAct, ref string estado, ref string salida)
         {
             SqlParameter[] parametro = null;
             string comando = "";
@@ -1259,7 +1259,7 @@ namespace BusinessLayer
             estado = "";
             salida = "";
 
-            if (key_UBL.AgregandoUbicacion(newImaUbicacion, ref parametro, ref comando))
+            if (key_ACBL.AgregandoActualizar(newAct, ref parametro, ref comando))
             {
                 respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
             }
@@ -1269,13 +1269,13 @@ namespace BusinessLayer
             }
             return respuesta;
         }
-        public DataTable InfoImagenesUbicacion(ref string estado, ref string salida)
+        public DataTable InfoActualizacion(ref string estado, ref string salida)
         {
             string instruccion = "";
             DataSet obtener = null;
             DataTable tabla = null;
 
-            if (key_UBL.MostrarUbicacion(ref instruccion))
+            if (key_ACBL.MostrarActualizar(ref instruccion))
             {
                 obtener = keyDAL.DBLectura(instruccion, keyDAL.EstadoCn(ref estado), ref salida);
                 if (obtener != null)
@@ -1285,7 +1285,7 @@ namespace BusinessLayer
             }
             return tabla;
         }
-        public Boolean ActualizarImagenesUbicacion(Ubicacion newImaUbicacion, ref string estado, ref string salida)
+        public Boolean ActualizarActualizacion(Actualizacion newAct, ref string estado, ref string salida)
         {
             SqlParameter[] parametro = null;
             string comando = "";
@@ -1294,7 +1294,7 @@ namespace BusinessLayer
             estado = "";
             salida = "";
 
-            if (key_UBL.ModificarUbicacion(newImaUbicacion, ref parametro, ref comando))
+            if (key_ACBL.ModificarActualizar(newAct, ref parametro, ref comando))
             {
                 respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
             }
@@ -1304,7 +1304,7 @@ namespace BusinessLayer
             }
             return respuesta;
         }
-        public Boolean EliminarImagenesUbicacion(Ubicacion dropImaUbicacion, ref string estado, ref string salida)
+        public Boolean EliminarActualizacion(Actualizacion dropAct, ref string estado, ref string salida)
         {
             SqlParameter[] parametro = null;
             string comando = "";
@@ -1313,7 +1313,7 @@ namespace BusinessLayer
             estado = "";
             salida = "";
 
-            if (key_UBL.DropUbicacion(dropImaUbicacion, ref parametro, ref comando))
+            if (key_ACBL.DropActualizar(dropAct, ref parametro, ref comando))
             {
                 respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
             }
@@ -1324,6 +1324,182 @@ namespace BusinessLayer
             return respuesta;
         }
         /*                   A D I C I O N A L                  */
+
+        /************************************************************/
+        /*#########################################################*/
+
+        /************************************************************/
+        /*                     M A R C A                           */
+        public Boolean AgregarMarca(Marca newMarca, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_MBL.AgregandoMarca(newMarca, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public DataTable InfoMarca(ref string estado, ref string salida)
+        {
+            string instruccion = "";
+            DataSet obtener = null;
+            DataTable tabla = null;
+
+            if (key_MBL.MostrarMarca(ref instruccion))
+            {
+                obtener = keyDAL.DBLectura(instruccion, keyDAL.EstadoCn(ref estado), ref salida);
+                if (obtener != null)
+                {
+                    tabla = obtener.Tables[0];
+                }
+            }
+            return tabla;
+        }
+        public Boolean ActualizarMarca(Marca newMarca, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_MBL.ModificarMarca(newMarca, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public Boolean EliminarMarca(Marca dropMarca, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_MBL.DropMarca(dropMarca, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        /*                   A D I C I O N A L                  */
+
+        /************************************************************/
+        /*#########################################################*/
+
+        /************************************************************/
+        /*                  C O M P U   F I N A L                  */
+        public Boolean AgregarCompFinal(ComputadoraFinal newComFinal, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_CFBL.AgregandoCompFinal(newComFinal, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public DataTable InfoCompFinal(ref string estado, ref string salida)
+        {
+            string instruccion = "";
+            DataSet obtener = null;
+            DataTable tabla = null;
+
+            if (key_CFBL.MostrarCompFinal(ref instruccion))
+            {
+                obtener = keyDAL.DBLectura(instruccion, keyDAL.EstadoCn(ref estado), ref salida);
+                if (obtener != null)
+                {
+                    tabla = obtener.Tables[0];
+                }
+            }
+            return tabla;
+        }
+        public Boolean ActualizarCompFinal(ComputadoraFinal newComFinal, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_CFBL.ModificarCompFinal(newComFinal, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public Boolean EliminarCompFinal(ComputadoraFinal dropComFinal, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_CFBL.DropCompFinal(dropComFinal, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        /*                   A D I C I O N A L                  */
+        public DataTable InfoCompFinalCompleto(ref string estado, ref string salida)
+        {
+            string instruccion = "";
+            DataSet obtener = null;
+            DataTable tabla = null;
+
+            if (key_CFBL.MostrarComponenCompFinal(ref instruccion))
+            {
+                obtener = keyDAL.DBLectura(instruccion, keyDAL.EstadoCn(ref estado), ref salida);
+                if (obtener != null)
+                {
+                    tabla = obtener.Tables[0];
+                }
+            }
+            return tabla;
+        }
 
         /************************************************************/
         /*#########################################################*/
