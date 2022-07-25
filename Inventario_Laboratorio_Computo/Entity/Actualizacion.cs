@@ -8,6 +8,7 @@ namespace Entity
 {
     public class Actualizacion
     {
+        public int Id { get; set; }
         public string num_inv { get; set; }
         public string num_serie { get; set; }
         public string descripcion { get; set; }

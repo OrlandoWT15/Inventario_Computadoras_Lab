@@ -18,7 +18,19 @@ namespace BusinessLayer
         private Com_RAM_BL key_RBL = new Com_RAM_BL();
         private Com_CPU_BL key_CPUBL = new Com_CPU_BL();
         private Com_Perifericos_BL key_PBL = new Com_Perifericos_BL();
+        private Com_Componente_BL key_COMBL = new Com_Componente_BL();
+        //Business layer de Gabinete
         private Com_Gabinete_BL key_GBL = new Com_Gabinete_BL();
+        //Business layer de Imagenes
+        private Img_Imagenes_BL key_IBL = new Img_Imagenes_BL();
+        //Business layer de Ubicacion
+        private Ubi_Ubicacion_BL key_UBL = new Ubi_Ubicacion_BL();
+        //Business layer de Actualizacion
+        private Actualizacion_BL key_ACBL = new Actualizacion_BL();
+        //Business layer de Marca
+        private Marca_BL key_MBL = new Marca_BL();
+        //Business layer de Computadora Final
+        private ComputadoraFinal_BL key_CF = new ComputadoraFinal_BL();
 
         public BL(string cadenaCn)
         {
@@ -927,8 +939,393 @@ namespace BusinessLayer
         /*#########################################################*/
 
         /************************************************************/
-        /*          I M A G E N E S   C P U                     */
+        /*             I M A G E N E S   C P U                     */
+        public Boolean AgregarImagenesCPU(Imagenes_CPU newImaCPU, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
 
+            estado = "";
+            salida = "";
 
+            if (key_IBL.AgregandoImagenCPU(newImaCPU, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public DataTable InfoImagenesCPU(ref string estado, ref string salida)
+        {
+            string instruccion = "";
+            DataSet obtener = null;
+            DataTable tabla = null;
+
+            if (key_IBL.MostrarImagenCPU(ref instruccion))
+            {
+                obtener = keyDAL.DBLectura(instruccion, keyDAL.EstadoCn(ref estado), ref salida);
+                if (obtener != null)
+                {
+                    tabla = obtener.Tables[0];
+                }
+            }
+            return tabla;
+        }
+        public Boolean ActualizarImagenesCPU(Imagenes_CPU newImaCPU, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_IBL.ModificarImagenCPU(newImaCPU, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public Boolean EliminarImagenesCPU(Imagenes_CPU dropImaCPU, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_IBL.DropImagenCPU(dropImaCPU, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        /************************************************************/
+        /*         I M A G E N E S   C O M P U   F I N A L         */
+        public Boolean AgregarImagenesCompuFinal(Imagenes_ComFinal newImaCompFinal, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_IBL.AgregandoImagenCompFinal(newImaCompFinal, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public DataTable InfoImagenesCompuFinal(ref string estado, ref string salida)
+        {
+            string instruccion = "";
+            DataSet obtener = null;
+            DataTable tabla = null;
+
+            if (key_IBL.MostrarImagenCompFinal(ref instruccion))
+            {
+                obtener = keyDAL.DBLectura(instruccion, keyDAL.EstadoCn(ref estado), ref salida);
+                if (obtener != null)
+                {
+                    tabla = obtener.Tables[0];
+                }
+            }
+            return tabla;
+        }
+        public Boolean ActualizarImagenesCompuFinal(Imagenes_ComFinal newImaCompFinal, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_IBL.ModificarImagenCompFinal(newImaCompFinal, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public Boolean EliminarImagenesCompuFinal(Imagenes_ComFinal dropImaCompFinal, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_IBL.DropImagenCompFinal(dropImaCompFinal, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        /*                   A D I C I O N A L                  */
+
+        /************************************************************/
+        /*#########################################################*/
+
+        /************************************************************/
+        /*               L A B O R A T O R I O                     */
+        public Boolean AgregarLaboratorio(Laboratorio newImaLab, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_UBL.AgregandoLaboratorio(newImaLab, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public DataTable InfoLaboratorio(ref string estado, ref string salida)
+        {
+            string instruccion = "";
+            DataSet obtener = null;
+            DataTable tabla = null;
+
+            if (key_UBL.MostrarLaboratorio(ref instruccion))
+            {
+                obtener = keyDAL.DBLectura(instruccion, keyDAL.EstadoCn(ref estado), ref salida);
+                if (obtener != null)
+                {
+                    tabla = obtener.Tables[0];
+                }
+            }
+            return tabla;
+        }
+        public Boolean ActualizarLaboratorio(Laboratorio newImaLab, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_UBL.ModificarLaboratorio(newImaLab, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public Boolean EliminarLaboratorio(Laboratorio dropImaLab, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_UBL.DropLaboratorio(dropLab, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        /************************************************************/
+        /*                   U B I C A C I O N                     */
+        public Boolean AgregarImagenesUbicacion(Ubicacion newImaUbicacion, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_UBL.AgregandoUbicacion(newImaUbicacion, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public DataTable InfoImagenesUbicacion(ref string estado, ref string salida)
+        {
+            string instruccion = "";
+            DataSet obtener = null;
+            DataTable tabla = null;
+
+            if (key_UBL.MostrarUbicacion(ref instruccion))
+            {
+                obtener = keyDAL.DBLectura(instruccion, keyDAL.EstadoCn(ref estado), ref salida);
+                if (obtener != null)
+                {
+                    tabla = obtener.Tables[0];
+                }
+            }
+            return tabla;
+        }
+        public Boolean ActualizarImagenesUbicacion(Ubicacion newImaUbicacion, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_UBL.ModificarUbicacion(newImaUbicacion, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public Boolean EliminarImagenesUbicacion(Ubicacion dropImaUbicacion, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_UBL.DropUbicacion(dropImaUbicacion, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        /*                   A D I C I O N A L                  */
+
+        /************************************************************/
+        /*#########################################################*/
+
+        /************************************************************/
+        /*                 A C T U A L I Z A C I O N               */
+        public Boolean AgregarImagenesUbicacion(Ubicacion newImaUbicacion, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_UBL.AgregandoUbicacion(newImaUbicacion, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public DataTable InfoImagenesUbicacion(ref string estado, ref string salida)
+        {
+            string instruccion = "";
+            DataSet obtener = null;
+            DataTable tabla = null;
+
+            if (key_UBL.MostrarUbicacion(ref instruccion))
+            {
+                obtener = keyDAL.DBLectura(instruccion, keyDAL.EstadoCn(ref estado), ref salida);
+                if (obtener != null)
+                {
+                    tabla = obtener.Tables[0];
+                }
+            }
+            return tabla;
+        }
+        public Boolean ActualizarImagenesUbicacion(Ubicacion newImaUbicacion, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_UBL.ModificarUbicacion(newImaUbicacion, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public Boolean EliminarImagenesUbicacion(Ubicacion dropImaUbicacion, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_UBL.DropUbicacion(dropImaUbicacion, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        /*                   A D I C I O N A L                  */
+
+        /************************************************************/
+        /*#########################################################*/
     }
 }

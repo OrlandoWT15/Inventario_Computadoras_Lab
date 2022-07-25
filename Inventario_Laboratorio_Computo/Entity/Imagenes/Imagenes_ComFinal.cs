@@ -8,6 +8,7 @@ namespace Entity
 {
     public class Imagenes_ComFinal
     {
+        public int Id { get; set; }
         public string urlimage_one { get; set; }
         public string urlimage_two { get; set; }
         public string urlimage_three { get; set; }

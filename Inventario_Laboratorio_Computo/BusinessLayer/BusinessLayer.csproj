@@ -50,6 +50,8 @@
     <Compile Include="BL.cs" />
     <Compile Include="Com_CPU_BL.cs" />
     <Compile Include="Com_DiscoDuro_BL.cs" />
+    <Compile Include="Com_Gabinete_BL.cs" />
+    <Compile Include="Com_Perifericos_BL.cs" />
     <Compile Include="Com_RAM_BL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
+using Entity;
 
-namespace Entity
+namespace BusinessLayer
 {
-    public class Imagenes_CPU
+    public class ComputadoraFinal_BL
     {
-        public int Id { get; set; }
-        public string urlimage_one { get; set; }
     }
 }

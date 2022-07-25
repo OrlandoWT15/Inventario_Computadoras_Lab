@@ -8,6 +8,7 @@ namespace Entity
 {
     public class Componente_Marca
     {
+        public int Id { get; set; }
         public int F_Componente { get; set; }
         public int F_Marca { get; set; }
     }
