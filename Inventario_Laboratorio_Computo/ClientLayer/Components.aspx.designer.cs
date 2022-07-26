@@ -11,7 +11,7 @@ namespace ClientLayer
 {
 
 
-    public partial class Formulario_web11
+    public partial class Formulario_web12
     {
 
         /// <summary>
@@ -210,7 +210,7 @@ namespace ClientLayer
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl1;
+        protected global::System.Web.UI.WebControls.LinkButton lbl1;
 
         /// <summary>
         /// Control lbl2.
@@ -219,7 +219,7 @@ namespace ClientLayer
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl2;
+        protected global::System.Web.UI.WebControls.LinkButton lbl2;
 
         /// <summary>
         /// Control lbl3.
@@ -228,7 +228,7 @@ namespace ClientLayer
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl3;
+        protected global::System.Web.UI.WebControls.LinkButton lbl3;
 
         /// <summary>
         /// Control lbl4.
@@ -237,6 +237,6 @@ namespace ClientLayer
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl4;
+        protected global::System.Web.UI.WebControls.LinkButton lbl4;
     }
 }

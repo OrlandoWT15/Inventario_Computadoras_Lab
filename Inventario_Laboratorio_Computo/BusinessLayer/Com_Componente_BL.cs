@@ -83,6 +83,54 @@ namespace BusinessLayer
 
             return respuesta;
         }
+        public Boolean MostrarComponenteMarcaTeclado(ref string instruccion)
+        {
+            Boolean respuesta;
+            if (instruccion == "")
+            {
+                instruccion = "SELECT cm.f_marca,ma.Marca" +
+                    " FROM Componente_Marca as cm" +
+                    " INNER JOIN Marca as ma ON cm.f_marca = ma.Id_Marca" +
+                    " where cm.f_componente = 3";
+                respuesta = true;
+            }
+            else
+                respuesta = false;
+
+            return respuesta;
+        }
+        public Boolean MostrarComponenteMarcaMouse(ref string instruccion)
+        {
+            Boolean respuesta;
+            if (instruccion == "")
+            {
+                instruccion = "SELECT cm.f_marca,ma.Marca" +
+                    " FROM Componente_Marca as cm" +
+                    " INNER JOIN Marca as ma ON cm.f_marca = ma.Id_Marca" +
+                    " where cm.f_componente = 2";
+                respuesta = true;
+            }
+            else
+                respuesta = false;
+
+            return respuesta;
+        }
+        public Boolean MostrarComponenteMarcaMonitor(ref string instruccion)
+        {
+            Boolean respuesta;
+            if (instruccion == "")
+            {
+                instruccion = "SELECT cm.f_marca,ma.Marca" +
+                    " FROM Componente_Marca as cm" +
+                    " INNER JOIN Marca as ma ON cm.f_marca = ma.Id_Marca" +
+                    " where cm.f_componente = 1";
+                respuesta = true;
+            }
+            else
+                respuesta = false;
+
+            return respuesta;
+        }
         /*Mostrar*/
 
         /*Actualizar*/

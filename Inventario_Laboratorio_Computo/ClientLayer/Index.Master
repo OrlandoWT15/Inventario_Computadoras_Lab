@@ -16,6 +16,9 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+    <!-- Custom toast for this template-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <title> Laboratorio de Computo</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -47,6 +50,16 @@
                             <span>Dashboard</span></a>
                     </li>
 
+
+                    <!-- Divider -->
+                    <hr class="sidebar-divider">
+
+                    <!-- Nav Item - Component -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="Components.aspx">
+                            <i class="fas fa-fw fa-address-book"></i>
+                            <span>Componentes</span></a>
+                    </li>
 
                     <!-- Divider -->
                     <hr class="sidebar-divider">

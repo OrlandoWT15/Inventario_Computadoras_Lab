@@ -1,16 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Index.Master" AutoEventWireup="true" CodeBehind="Agregate.aspx.cs" Inherits="ClientLayer.Formulario_web11" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Index.Master" AutoEventWireup="true" CodeBehind="Components.aspx.cs" Inherits="ClientLayer.Formulario_web12" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">
-            Agregar Registro 
-        </h1>
-        <p>
-            El registro de una computadora se va hacer por una serie de pasos, para que puedan completar el registro 
-            de la computadora con toda la información necesaria. 
-        </p>
-    </div>
+    <h1 class="h3 mb-0 text-gray-800">
+            Agregar Registro  de Componentes
+    </h1>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
     <!-- Content Row -->
     <div class="row">
         <div class="col-xl-8 col-lg-7">
@@ -98,7 +96,11 @@
                                 <asp:ListItem Text="--Selecciona--" Value=""/>
                             </asp:DropDownList>
                         </div>
-                        <asp:Button ID="btnPerifericos" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="btnPerifericos_Click" Visible="true"/>
+                        <div class="form-row align-items-center">
+                            <div class="col-auto my-1">
+                                <asp:Button ID="btnPerifericos" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="btnPerifericos_Click" Visible="true"/>
+                            </div>
+                        </div>
                     </div>
                     <!-- END View 1 -->
                 </div>
@@ -106,26 +108,34 @@
         </div>
         <div class="col-xl-4 col-lg-5">
             <h3>
-                Progreso
+                Navegación
             </h3>
             <ul class="navbar-nav align-items-center justify-content-center bg-gradient-primary sidebar sidebar-dark accordion rounded" id="accordionSidebar">
                 <li class="nav-item">
-                    <asp:Label ID="lbl1" Enabled="true" Text="1" runat="server" />
+                    <asp:LinkButton ID="lbl1" runat="server" CssClass="text-white" href="Components.aspx">
+                        <i class="fas fa-fw fa-desktop"></i>
+                    </asp:LinkButton>
                 </li>
                 <hr class="sidebar-divider my-0">
                 <br />
                 <li class="nav-item">
-                   <asp:Label ID="lbl2" Enabled="false" Text="2" runat="server" />
+                    <asp:LinkButton ID="lbl2" runat="server" CssClass="text-white" href="Cabinet.aspx">
+                        <i class="fas fa-fw fa-cube"></i>
+                    </asp:LinkButton>
                 </li>
                 <hr class="sidebar-divider my-0">
                 <br/>
                 <li class="nav-item">
-                    <asp:Label ID="lbl3" Enabled="false" Text="3" runat="server" />
+                    <asp:LinkButton ID="lbl3" runat="server" CssClass="text-white" href="#">
+                        <i class="fas fa-fw fa-cubes"></i>
+                    </asp:LinkButton>
                 </li>
                 <hr class="sidebar-divider my-0">
                 <br/>
                 <li class="nav-item">
-                    <asp:Label ID="lbl4" Enabled="false" Text="4" runat="server" />
+                    <asp:LinkButton ID="lbl4" runat="server" CssClass="text-white" href="#">
+                        <i class="fas fa-fw fa-map-marked"></i>
+                    </asp:LinkButton>
                 </li>
             </ul>
         </div>

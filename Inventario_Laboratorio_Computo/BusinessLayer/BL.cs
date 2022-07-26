@@ -1424,6 +1424,207 @@ namespace BusinessLayer
         /*#########################################################*/
 
         /************************************************************/
+        /*                     C O M P O N E N T E                 */
+        public Boolean AgregarComponente(Componente newCom, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_COMBL.AgregandoComponente(newCom, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public DataTable InfoComponente(ref string estado, ref string salida)
+        {
+            string instruccion = "";
+            DataSet obtener = null;
+            DataTable tabla = null;
+
+            if (key_COMBL.MostrarComponente(ref instruccion))
+            {
+                obtener = keyDAL.DBLectura(instruccion, keyDAL.EstadoCn(ref estado), ref salida);
+                if (obtener != null)
+                {
+                    tabla = obtener.Tables[0];
+                }
+            }
+            return tabla;
+        }
+        public Boolean ActualizarComponente(Componente newCom, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_COMBL.ModificarComponente(newCom, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public Boolean EliminarComponente(Componente dropCom, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_COMBL.DropComponente(dropCom, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        /*          C O M P O N E N T E   &&   M A R C A          */
+        public Boolean AgregarComponenteMarca(Componente_Marca newComMa, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_COMBL.AgregandoComponenteMarca(newComMa, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public DataTable InfoComponenteMarca(ref string estado, ref string salida)
+        {
+            string instruccion = "";
+            DataSet obtener = null;
+            DataTable tabla = null;
+
+            if (key_COMBL.MostrarComponenteMarca(ref instruccion))
+            {
+                obtener = keyDAL.DBLectura(instruccion, keyDAL.EstadoCn(ref estado), ref salida);
+                if (obtener != null)
+                {
+                    tabla = obtener.Tables[0];
+                }
+            }
+            return tabla;
+        }
+        public Boolean ActualizarComponenteMarca(Componente_Marca newComMa, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_COMBL.ModificarComponenteMarca(newComMa, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public Boolean EliminarComponenteMarca(Componente_Marca dropComMa, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            Boolean respuesta;
+
+            estado = "";
+            salida = "";
+
+            if (key_COMBL.DropComponenteMarca(dropComMa, ref parametro, ref comando))
+            {
+                respuesta = keyDAL.BaseSegura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+            }
+            else
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        /*                   A D I C I O N A L                  */
+        public DataTable InfoComponenteMarcaTeclado(ref string estado, ref string salida)
+        {
+            string instruccion = "";
+            DataSet obtener = null;
+            DataTable tabla = null;
+
+            if (key_COMBL.MostrarComponenteMarcaTeclado(ref instruccion))
+            {
+                obtener = keyDAL.DBLectura(instruccion, keyDAL.EstadoCn(ref estado), ref salida);
+                if (obtener != null)
+                {
+                    tabla = obtener.Tables[0];
+                }
+            }
+            return tabla;
+        }
+        public DataTable InfoComponenteMarcaMouse(ref string estado, ref string salida)
+        {
+            string instruccion = "";
+            DataSet obtener = null;
+            DataTable tabla = null;
+
+            if (key_COMBL.MostrarComponenteMarcaMouse(ref instruccion))
+            {
+                obtener = keyDAL.DBLectura(instruccion, keyDAL.EstadoCn(ref estado), ref salida);
+                if (obtener != null)
+                {
+                    tabla = obtener.Tables[0];
+                }
+            }
+            return tabla;
+        }
+        public DataTable InfoComponenteMarcaMonitor(ref string estado, ref string salida)
+        {
+            string instruccion = "";
+            DataSet obtener = null;
+            DataTable tabla = null;
+
+            if (key_COMBL.MostrarComponenteMarcaMonitor(ref instruccion))
+            {
+                obtener = keyDAL.DBLectura(instruccion, keyDAL.EstadoCn(ref estado), ref salida);
+                if (obtener != null)
+                {
+                    tabla = obtener.Tables[0];
+                }
+            }
+            return tabla;
+        }
+        /************************************************************/
+        /*#########################################################*/
+
+        /************************************************************/
         /*                  C O M P U   F I N A L                  */
         public Boolean AgregarCompFinal(ComputadoraFinal newComFinal, ref string estado, ref string salida)
         {

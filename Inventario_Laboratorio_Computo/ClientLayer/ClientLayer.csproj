@@ -74,6 +74,8 @@
     <Content Include="css\sb-admin-2.min.css" />
     <Content Include="Default.aspx" />
     <Content Include="Agregate.aspx" />
+    <Content Include="Components.aspx" />
+    <Content Include="Cabinet.aspx" />
     <Content Include="img\undraw_posting_photo.svg" />
     <Content Include="img\undraw_profile.svg" />
     <Content Include="img\undraw_profile_1.svg" />
@@ -1772,6 +1774,20 @@
     </Compile>
     <Compile Include="Agregate.aspx.designer.cs">
       <DependentUpon>Agregate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Components.aspx.cs">
+      <DependentUpon>Components.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components.aspx.designer.cs">
+      <DependentUpon>Components.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cabinet.aspx.cs">
+      <DependentUpon>Cabinet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cabinet.aspx.designer.cs">
+      <DependentUpon>Cabinet.aspx</DependentUpon>
     </Compile>
     <Compile Include="Index.Master.cs">
       <DependentUpon>Index.Master</DependentUpon>
