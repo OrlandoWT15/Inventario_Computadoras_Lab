@@ -1404,7 +1404,22 @@ namespace BusinessLayer
             return respuesta;
         }
         /*                   A D I C I O N A L                  */
+        public DataTable InfoMarcaGlobal(ref string estado, ref string salida)
+        {
+            string instruccion = "";
+            DataSet obtener = null;
+            DataTable tabla = null;
 
+            if (key_MBL.MostrarMarcaGlobal(ref instruccion))
+            {
+                obtener = keyDAL.DBLectura(instruccion, keyDAL.EstadoCn(ref estado), ref salida);
+                if (obtener != null)
+                {
+                    tabla = obtener.Tables[0];
+                }
+            }
+            return tabla;
+        }
         /************************************************************/
         /*#########################################################*/
 

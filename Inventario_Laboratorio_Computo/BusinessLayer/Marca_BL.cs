@@ -51,6 +51,19 @@ namespace BusinessLayer
 
             return respuesta;
         }
+        public Boolean MostrarMarcaGlobal(ref string instruccion)
+        {
+            Boolean respuesta;
+            if (instruccion == "")
+            {
+                instruccion = "SELECT Marca,Id_Marca FROM marca";
+                respuesta = true;
+            }
+            else
+                respuesta = false;
+
+            return respuesta;
+        }
 
         /*Mostrar*/
 
