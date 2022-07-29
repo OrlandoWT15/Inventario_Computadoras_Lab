@@ -24,219 +24,192 @@ namespace ClientLayer
         protected global::System.Web.UI.WebControls.Label lbltitulo;
 
         /// <summary>
-        /// Control lblsub_teclado.
+        /// Control lblsub_CPUGenerico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblsub_teclado;
+        protected global::System.Web.UI.WebControls.Label lblsub_CPUGenerico;
 
         /// <summary>
-        /// Control lblPerifericos_con_0.
+        /// Control lblCPUGenerico_tipo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPerifericos_con_0;
+        protected global::System.Web.UI.WebControls.Label lblCPUGenerico_tipo;
 
         /// <summary>
-        /// Control ddlcon_teclado.
+        /// Control ddlCPUGenerico_tipo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlcon_teclado;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCPUGenerico_tipo;
 
         /// <summary>
-        /// Control lblPerifericos_ma_0.
+        /// Control lblmarca_CPUGenerico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPerifericos_ma_0;
+        protected global::System.Web.UI.WebControls.Label lblmarca_CPUGenerico;
 
         /// <summary>
-        /// Control ddlmarca_teclado.
+        /// Control ddlmarca_CPUGenerico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlmarca_teclado;
+        protected global::System.Web.UI.WebControls.DropDownList ddlmarca_CPUGenerico;
 
         /// <summary>
-        /// Control lblsub_mouse.
+        /// Control lblCPUGenerico_modelo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblsub_mouse;
+        protected global::System.Web.UI.WebControls.Label lblCPUGenerico_modelo;
 
         /// <summary>
-        /// Control lblPerifericos_con_1.
+        /// Control txtCPUGenerico_modelo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPerifericos_con_1;
+        protected global::System.Web.UI.WebControls.TextBox txtCPUGenerico_modelo;
 
         /// <summary>
-        /// Control ddlcon_mouse.
+        /// Control lblCPUGenerico_modelo_small.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlcon_mouse;
+        protected global::System.Web.UI.WebControls.Label lblCPUGenerico_modelo_small;
 
         /// <summary>
-        /// Control lblPerifericos_ma_1.
+        /// Control lblCPUGenerico_descripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPerifericos_ma_1;
+        protected global::System.Web.UI.WebControls.Label lblCPUGenerico_descripcion;
 
         /// <summary>
-        /// Control ddlmarca_mouse.
+        /// Control txtCPUGenerico_descripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlmarca_mouse;
+        protected global::System.Web.UI.WebControls.TextBox txtCPUGenerico_descripcion;
 
         /// <summary>
-        /// Control lblsub_monitor.
+        /// Control lblCPUGenerico_descripcion_small.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblsub_monitor;
+        protected global::System.Web.UI.WebControls.Label lblCPUGenerico_descripcion_small;
 
         /// <summary>
-        /// Control lblPerifericos_con_2.
+        /// Control lblCPUGenerico_tiporam.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPerifericos_con_2;
+        protected global::System.Web.UI.WebControls.Label lblCPUGenerico_tiporam;
 
         /// <summary>
-        /// Control ddlcon_monitor.
+        /// Control ddlCPUGenerico_tiporam.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlcon_monitor;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCPUGenerico_tiporam;
 
         /// <summary>
-        /// Control lblPerifericos_tamano.
+        /// Control lblCPUGenerico_tipogabinete.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPerifericos_tamano;
+        protected global::System.Web.UI.WebControls.Label lblCPUGenerico_tipogabinete;
 
         /// <summary>
-        /// Control txttam_longitud_monitor.
+        /// Control ddlCPUGenerico_tipogabinete.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txttam_longitud_monitor;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCPUGenerico_tipogabinete;
 
         /// <summary>
-        /// Control lblPerifericos_x.
+        /// Control lblCPUGenerico_imagen.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPerifericos_x;
+        protected global::System.Web.UI.WebControls.Label lblCPUGenerico_imagen;
 
         /// <summary>
-        /// Control txttam_ancho_monitor.
+        /// Control oFile.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txttam_ancho_monitor;
+        protected global::System.Web.UI.WebControls.FileUpload oFile;
 
         /// <summary>
-        /// Control lblPerifericos_ma_2.
+        /// Control btnCPUGenerico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPerifericos_ma_2;
+        protected global::System.Web.UI.WebControls.Button btnCPUGenerico;
 
         /// <summary>
-        /// Control ddlmarca_monitor.
+        /// Control lbl_cpu.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlmarca_monitor;
+        protected global::System.Web.UI.WebControls.LinkButton lbl_cpu;
 
         /// <summary>
-        /// Control btnPerifericos.
+        /// Control lbl_com.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPerifericos;
+        protected global::System.Web.UI.WebControls.LinkButton lbl_com;
 
         /// <summary>
-        /// Control lbl1.
+        /// Control lbl_ubi.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl1;
-
-        /// <summary>
-        /// Control lbl2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl2;
-
-        /// <summary>
-        /// Control lbl3.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl3;
-
-        /// <summary>
-        /// Control lbl4.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl4;
+        protected global::System.Web.UI.WebControls.LinkButton lbl_ubi;
     }
 }

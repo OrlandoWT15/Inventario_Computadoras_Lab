@@ -75,6 +75,48 @@ namespace DataAccessLayer
             }
             return resp;
         }
+        public DataSet BaseSeguraDBLectura(string Sqlinstruc, SqlConnection prAb, ref string mensaje, SqlParameter[] evaluacion)
+        {
+            DataSet cajaGrande = null;
+            SqlDataAdapter trailer = null;
+            SqlCommand carrito = null;
+
+            if (prAb != null)
+            {
+                mensaje = "";
+
+                using (carrito = new SqlCommand(Sqlinstruc, prAb))
+                {
+                    using (trailer = new SqlDataAdapter())
+                    {
+                        cajaGrande = new DataSet();
+                        foreach (SqlParameter x in evaluacion)
+                        {
+                            carrito.Parameters.Add(x);
+                        }
+                        trailer.SelectCommand = carrito;
+                        try
+                        {
+                            trailer.Fill(cajaGrande);
+                            mensaje = "Instrucción Correcta";
+                        }
+                        catch (Exception h)
+                        {
+                            mensaje = "Error : " + h.Message + " !";
+                            cajaGrande = null;
+                        }
+                    }
+                }
+                prAb.Close();
+                prAb.Dispose();
+            }
+            else
+            {
+                mensaje = "Error de Conexión";
+                cajaGrande = null;
+            }
+            return cajaGrande;
+        }
 
         /*Recuperación de la información al macenada en un data set y normalmente se usa para un grid view*/
         public DataSet DBLectura(string Sqlinstruc, SqlConnection prAb, ref string m)

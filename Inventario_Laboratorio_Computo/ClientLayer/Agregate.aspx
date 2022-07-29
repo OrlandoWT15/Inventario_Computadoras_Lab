@@ -22,7 +22,7 @@
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <!-- View 1 -->
-                    <asp:Label ID="lblsub_teclado" runat="server" Text="Teclado" Visible="true">
+                    <asp:Label ID="lblsub_CPUGenerico" runat="server" Text="CPU Completo" Visible="false">
                     </asp:Label>
                     <!-- END View 1 -->
                 </div>
@@ -30,103 +30,70 @@
                     <!-- View 1 -->
                     <div>
                         <div class="form-group">
-                            <asp:Label ID="lblPerifericos_con_0" runat="server" Text="Conector" Visible="true"></asp:Label>
-                            <asp:DropDownList ID="ddlcon_teclado" runat="server" CssClass="form-control" datatextfield="Text" datavaluefield="Value" Visible="true">
-                            </asp:DropDownList>
+                            <asp:Label ID="lblCPUGenerico_tipo" runat="server" Text="Tipo de CPU" Visible="true"></asp:Label>
+                            <asp:DropDownList ID="ddlCPUGenerico_tipo" runat="server" DataTextField="Tipo" DataValueField="id_Tcpu" Visible="true" CssClass="form-control"></asp:DropDownList>
                         </div>
                         <div class="form-group">
-                            <asp:Label ID="lblPerifericos_ma_0" runat="server" Text="Marca" Visible="true"></asp:Label>
-                            <asp:DropDownList ID="ddlmarca_teclado" runat="server" CssClass="form-control" DataTextField="Marca" DataValueField="f_marca" Visible="true">
-                                <asp:ListItem Text="--Selecciona--" Value=""/>
-                            </asp:DropDownList>
-                        </div>
-                    </div>
-                    <!-- END View 1 -->
-                </div>
-            </div>
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <!-- View 1 -->
-                    <asp:Label ID="lblsub_mouse" runat="server" Text="Mouse" Visible="true">
-                    </asp:Label>
-                    <!-- END View 1 -->
-                </div>
-                <div class="card-body">
-                    <!-- View 1 -->
-                    <div>
-                        <div class="form-group">
-                            <asp:Label ID="lblPerifericos_con_1" runat="server" Text="Conector" Visible="true"></asp:Label>
-                            <asp:DropDownList ID="ddlcon_mouse" runat="server" CssClass="form-control" datatextfield="Text" datavaluefield="Value" Visible="true">
-                            </asp:DropDownList>
-                        </div>
-                        
-                        <div class="form-group">
-                            <asp:Label ID="lblPerifericos_ma_1" runat="server" Text="Marca" Visible="true"></asp:Label>
-                            <asp:DropDownList ID="ddlmarca_mouse" runat="server" CssClass="form-control"  DataTextField="Marca" DataValueField="f_marca" Visible="true">
-                                <asp:ListItem Text="--Selecciona--" Value=""/>
-                            </asp:DropDownList>
-                        </div>
-                    </div>
-                    <!-- END View 1 -->
-                </div>
-            </div>
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <asp:Label ID="lblsub_monitor" runat="server" Text="Monitor" Visible="true">
-                    </asp:Label>
-                </div>
-                <div class="card-body">
-                    <!-- View 1 -->
-                    <div>
-                        <div class="form-group">
-                            <asp:Label ID="lblPerifericos_con_2" runat="server" Text="Conectores" Visible="true"></asp:Label>
-                            <asp:DropDownList ID="ddlcon_monitor" runat="server" CssClass="form-control" datatextfield="Text" datavaluefield="Value" Visible="true">
-                            </asp:DropDownList>
+                            <asp:Label ID="lblmarca_CPUGenerico" runat="server" Text="Marca" Visible="true"></asp:Label>
+                            <asp:DropDownList ID="ddlmarca_CPUGenerico" runat="server" DataTextField="Marca" DataValueField="f_marca" Visible="true" CssClass="form-control"></asp:DropDownList>
                         </div>
                         <div class="form-group">
-                            <asp:Label ID="lblPerifericos_tamano" runat="server" Text="Tamaño" Visible="true"></asp:Label>
-                            
-                            <div class="form-inline mb-2">
-                                <asp:TextBox ID="txttam_longitud_monitor" runat="server" CssClass="form-control" AutoCompleteType="None" TextMode="Number" min="1" max="2000" Visible="true"></asp:TextBox>
-                                <asp:Label ID="lblPerifericos_x" runat="server" Text="X" Visible="true" CssClass="px-2"></asp:Label>
-                                <asp:TextBox ID="txttam_ancho_monitor" runat="server" CssClass="form-control" AutoCompleteType="None" TextMode="Number" min="1" max="2000" Visible="true"></asp:TextBox>
-                            </div>
+                            <asp:Label ID="lblCPUGenerico_modelo" runat="server" Text="Modelo" Visible="true"></asp:Label>
+                            <asp:TextBox ID="txtCPUGenerico_modelo" runat="server" Visible="true" CssClass="form-control"></asp:TextBox>
+                            <asp:Label ID="lblCPUGenerico_modelo_small" runat="server" Text="En el modelo, se refiere a él tipo de nomenclatura que cuenta el CPU, por ejemplo i5-10400F." CssClass="form-text text-muted text-xs"></asp:Label>
                         </div>
                         <div class="form-group">
-                            <asp:Label ID="lblPerifericos_ma_2" runat="server" Text="Marca" Visible="true"></asp:Label>
-                            <asp:DropDownList ID="ddlmarca_monitor" runat="server" CssClass="form-control" DataTextField="Marca" DataValueField="f_marca" Visible="true">
-                                <asp:ListItem Text="--Selecciona--" Value=""/>
-                            </asp:DropDownList>
+                            <asp:Label ID="lblCPUGenerico_descripcion" runat="server" Text="Descripción del CPU" Visible="true"></asp:Label>
+                            <asp:TextBox ID="txtCPUGenerico_descripcion" runat="server"  Visible="true" CssClass="form-control"></asp:TextBox>
+                            <asp:Label ID="lblCPUGenerico_descripcion_small" runat="server" Text="Complementa la información con más detalles del procesador, los cuales sean necesarios para comentar." Visible="true" CssClass="form-text text-muted text-xs" ></asp:Label>
+
                         </div>
-                        <asp:Button ID="btnPerifericos" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="btnPerifericos_Click" Visible="true"/>
+                        <div class="form-group">
+                            <asp:Label ID="lblCPUGenerico_tiporam" runat="server" Text="Capacidad de RAM" Visible="true"></asp:Label>
+                            <asp:DropDownList ID="ddlCPUGenerico_tiporam" runat="server"  Visible="true" CssClass="form-control"></asp:DropDownList>
+                        </div>
+                        <div class="form-group">
+                            <asp:Label ID="lblCPUGenerico_tipogabinete" runat="server" Text="Modelo de Gabinete" Visible="true"></asp:Label>
+                            <asp:DropDownList ID="ddlCPUGenerico_tipogabinete" runat="server"  Visible="true" CssClass="form-control"></asp:DropDownList>
+                        </div>
+                        <div class="form-group">
+                            <asp:Label ID="lblCPUGenerico_imagen" runat="server" Text="Imagen" Visible="true"></asp:Label>
+                            <asp:FileUpload ID="oFile" runat="server" CssClass="form-control-file btn-dark" />
+
+                        </div>
+                        <asp:Button ID="btnCPUGenerico" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="btnCPUGenerico_Click" Visible="true"/>
                     </div>
                     <!-- END View 1 -->
                 </div>
             </div>
         </div>
+        <!-- Nav -->
         <div class="col-xl-4 col-lg-5">
             <h3>
-                Progreso
+                Navegación
             </h3>
             <ul class="navbar-nav align-items-center justify-content-center bg-gradient-primary sidebar sidebar-dark accordion rounded" id="accordionSidebar">
                 <li class="nav-item">
-                    <asp:Label ID="lbl1" Enabled="true" Text="1" runat="server" />
+                    <asp:LinkButton ID="lbl_cpu" runat="server" CssClass="text-white" OnClick="lbl_cpu_Click" Enabled="false">
+                        <i class="fas fa-fw fa-cube"></i>
+                    </asp:LinkButton>
                 </li>
                 <hr class="sidebar-divider my-0">
                 <br />
                 <li class="nav-item">
-                   <asp:Label ID="lbl2" Enabled="false" Text="2" runat="server" />
+                    <asp:LinkButton ID="lbl_com" runat="server" CssClass="text-white" OnClick="lbl_com_Click" Enabled="true">
+                        <i class="fas fa-fw fa-desktop"></i>
+                    </asp:LinkButton>
                 </li>
                 <hr class="sidebar-divider my-0">
                 <br/>
                 <li class="nav-item">
-                    <asp:Label ID="lbl3" Enabled="false" Text="3" runat="server" />
+                    <asp:LinkButton ID="lbl_ubi" runat="server" CssClass="text-white" OnClick="lbl_ubi_Click" Enabled="true">
+                        <i class="fas fa-fw fa-map-marked"></i>
+                    </asp:LinkButton>
                 </li>
                 <hr class="sidebar-divider my-0">
                 <br/>
-                <li class="nav-item">
-                    <asp:Label ID="lbl4" Enabled="false" Text="4" runat="server" />
-                </li>
             </ul>
         </div>
     </div>

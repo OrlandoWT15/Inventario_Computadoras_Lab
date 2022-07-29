@@ -89,6 +89,24 @@ namespace BusinessLayer
 
             return respuesta;
         }
+        public Boolean MostrarImagenId(Imagenes_CPU imgcpu, ref SqlParameter[] evaluacion, ref string instruccion)
+        {
+            Boolean respuesta = false;
+            if (evaluacion == null)
+            {
+                instruccion = "select Id_Image from Imagenes_CPU where urlimage_one=@urlimage_one";
+                evaluacion = new SqlParameter[]
+                {
+                    new SqlParameter("@urlimage_one",SqlDbType.VarChar,255),
+                };
+                evaluacion[0].Value = imgcpu.urlimage_one;
+                respuesta = true;
+            }
+            else
+                respuesta = false;
+
+            return respuesta;
+        }
         /*Mostrar*/
 
         /*Actualizar*/

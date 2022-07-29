@@ -131,6 +131,54 @@ namespace BusinessLayer
 
             return respuesta;
         }
+        public Boolean MostrarComponenteMarcaGabinete(ref string instruccion)
+        {
+            Boolean respuesta;
+            if (instruccion == "")
+            {
+                instruccion = "SELECT cm.f_marca,ma.Marca" +
+                    " FROM Componente_Marca as cm" +
+                    " INNER JOIN Marca as ma ON cm.f_marca = ma.Id_Marca" +
+                    " where cm.f_componente = 5";
+                respuesta = true;
+            }
+            else
+                respuesta = false;
+
+            return respuesta;
+        }
+        public Boolean MostrarComponenteMarcaDiscoduro(ref string instruccion)
+        {
+            Boolean respuesta;
+            if (instruccion == "")
+            {
+                instruccion = "SELECT cm.f_marca,ma.Marca" +
+                    " FROM Componente_Marca as cm" +
+                    " INNER JOIN Marca as ma ON cm.f_marca = ma.Id_Marca" +
+                    " where cm.f_componente = 4";
+                respuesta = true;
+            }
+            else
+                respuesta = false;
+
+            return respuesta;
+        }
+        public Boolean MostrarComponenteMarcaModeloCPU(ref string instruccion)
+        {
+            Boolean respuesta;
+            if (instruccion == "")
+            {
+                instruccion = "SELECT cm.f_marca,ma.Marca" +
+                    " FROM Componente_Marca as cm" +
+                    " INNER JOIN Marca as ma ON cm.f_marca = ma.Id_Marca" +
+                    " where cm.f_componente = 6";
+                respuesta = true;
+            }
+            else
+                respuesta = false;
+
+            return respuesta;
+        }
         /*Mostrar*/
 
         /*Actualizar*/

@@ -66,7 +66,7 @@ namespace BusinessLayer
             Boolean respuesta;
             if (instruccion == "")
             {
-                instruccion = "SELECT  ra.Capacidad, ra.Velocidad,tr.Tipo,tr.Extra" +
+                instruccion = "SELECT  ra.id_RAM,ra.Capacidad, ra.Velocidad,tr.Tipo,tr.Extra" +
                     " FROM RAM AS ra" +
                     " INNER JOIN TipoRAM as tr ON ra.F_TipoR = tr.id_tipoRam";
                 respuesta = true;
@@ -102,6 +102,25 @@ namespace BusinessLayer
 
             return respuesta;
         }
+        public Boolean MostrarRAMCapacidad(RAM capRam, ref SqlParameter[] evaluacion, ref string instruccion)
+        {
+            Boolean respuesta = false;
+            if (evaluacion == null)
+            {
+                instruccion = "select * from RAM where Capacidad=@Capacidad";
+                evaluacion = new SqlParameter[]
+                {
+                    new SqlParameter("@Capacidad",SqlDbType.SmallInt),
+                };
+                evaluacion[0].Value = capRam.Capacidad;
+                respuesta = true;
+            }
+            else
+                respuesta = false;
+
+            return respuesta;
+        }
+
         /*Mostrar*/
 
         /*Actualizar*/

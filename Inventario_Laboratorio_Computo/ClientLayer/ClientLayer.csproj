@@ -75,7 +75,6 @@
     <Content Include="Default.aspx" />
     <Content Include="Agregate.aspx" />
     <Content Include="Components.aspx" />
-    <Content Include="Cabinet.aspx" />
     <Content Include="img\undraw_posting_photo.svg" />
     <Content Include="img\undraw_profile.svg" />
     <Content Include="img\undraw_profile_1.svg" />
@@ -1782,13 +1781,6 @@
     <Compile Include="Components.aspx.designer.cs">
       <DependentUpon>Components.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Cabinet.aspx.cs">
-      <DependentUpon>Cabinet.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Cabinet.aspx.designer.cs">
-      <DependentUpon>Cabinet.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Index.Master.cs">
       <DependentUpon>Index.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1985,6 +1977,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\cpu\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
