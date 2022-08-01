@@ -38,8 +38,8 @@ namespace ClientLayer
                 Session["Monitor"] = SelectMonitor();
                 Session["Estado"] = Conectores(1);
                 Session["DiscoD"] = SelectDuroD();
-
-                //Session["DiscoDuro"] = SelectMarcaDiscoDuro();
+                Session["Laboratorio"] = SelectLaboratorio();
+                
 
                 FillDDL();
             }
@@ -80,13 +80,11 @@ namespace ClientLayer
             string vacio = "";
             return keyBL.InfoTecladoCompleto(ref vacio, ref vacio);
         }
-
         private DataTable SelectMouse()
         {
             string vacio = "";
             return keyBL.InfoMouseCompleto(ref vacio, ref vacio);
         }
-
         private DataTable SelectMonitor()
         {
             string vacio = "";
@@ -97,7 +95,11 @@ namespace ClientLayer
             string vacio = "";
             return keyBL.InfoDiscoduro(ref vacio, ref vacio);
         }
-
+        private DataTable SelectLaboratorio()
+        {
+            string vacio = "";
+            return keyBL.InfoLaboratorio(ref vacio, ref vacio);
+        }
         private ListItemCollection Conectores(int estado = 0)
         {
             ListItemCollection items = null;
@@ -335,11 +337,27 @@ namespace ClientLayer
         {
             if (estado != true)
             {
-                
+                lblsub_ubicacion.Visible = false;
+                lblUbicacion_numinv.Visible = false;
+                lblUbicacion_lab_tipo.Visible = false;
+
+                txtUbicacion_numinv.Visible = false;
+
+                ddlUbicacion_lab_tipo.Visible = false;
+
+                btnUbicacion_.Visible = false;
             }
             else
             {
+                lblsub_ubicacion.Visible = true;
+                lblUbicacion_numinv.Visible = true;
+                lblUbicacion_lab_tipo.Visible = true;
 
+                txtUbicacion_numinv.Visible = true;
+
+                ddlUbicacion_lab_tipo.Visible = true;
+
+                btnUbicacion_.Visible = true;
             }
         }
         private void PastPage(int i = 0)
@@ -349,6 +367,7 @@ namespace ClientLayer
                 //Mas vistas
                 Vista_3();
                 Vista_2();
+                Vista_4();
                 lbl_datadisk.Enabled = true;
                 lbl_ubi.Enabled = true;
                 lbl_com.Enabled = true;
@@ -360,6 +379,7 @@ namespace ClientLayer
             {
                 Vista_3();
                 Vista_1();
+                Vista_4();
                 lbl_datadisk.Enabled = true;
                 lbl_ubi.Enabled = true;
                 lbl_cpu.Enabled = true;
@@ -371,6 +391,7 @@ namespace ClientLayer
             {
                 Vista_2();
                 Vista_1();
+                Vista_4();
                 lbl_com.Enabled = true;
                 lbl_cpu.Enabled = true;
                 lbl_ubi.Enabled = true;
@@ -478,7 +499,7 @@ namespace ClientLayer
             ddlCantDisc_disc_tipo.Items.Insert(0, "--- Selecciona una Opción ---");
             foreach (DataRow d in dd.Rows)
             {
-                i = new ListItem("Tipo de almacenamiento :"+d["TipoDisco"]+ " | Conector :"+d["conector"]+" | Marca :"+d["Marca"]+" | Extra :"+d["Extra"], d["id_Disco"].ToString());
+                i = new ListItem("Tipo de almacenamiento :"+d["TipoDisco"]+ " | Conector :"+d["conector"]+" | Marca :"+d["Marca"]+" | Capacidad :"+d["Capacidad"], d["id_Disco"].ToString());
                 ddlCantDisc_disc_tipo.Items.Add(i);
             }
         }
@@ -531,6 +552,14 @@ namespace ClientLayer
             //Vista3
             fillDiscoD();
             //Vista3
+
+            //Vistda4
+            ddlUbicacion_lab_tipo.DataSource = (DataTable)Session["Laboratorio"];
+            ddlUbicacion_lab_tipo.DataValueField = "nombre_laboratorio";
+            ddlUbicacion_lab_tipo.DataTextField = "nombre_laboratorio";
+            ddlUbicacion_lab_tipo.DataBind();
+            ddlUbicacion_lab_tipo.Items.Insert(0,"--- Selecciona una Opción ---");
+            //Vistda4
         }
 
         protected void lbl_cpu_Click(object sender, EventArgs e)
@@ -545,7 +574,7 @@ namespace ClientLayer
 
         protected void lbl_ubi_Click(object sender, EventArgs e)
         {
-            PastPage(2);
+            PastPage(3);
         }
         protected void lbl_datadisk_Click(object sender, EventArgs e)
         {
@@ -851,7 +880,7 @@ namespace ClientLayer
                 {
                     titulo = "Almacenamiento";
                     tipo = 3;
-                    PastPage();
+                    txtUbicacion_numinv.Text = txtCantDisc_numinv.Text;
                 }
             }
             else
@@ -861,7 +890,49 @@ namespace ClientLayer
                 tipo = 2;
             }
             Message("GuardarCant",titulo,mensaje,tipo);
+            if (state)
+            {
+                PastPage(3);
+            }
         }
 
+        protected void btnUbicacion__Click(object sender, EventArgs e)
+        {
+            string titulo = "", mensaje = "", estado = "";
+            int tipo = 0;
+            Boolean state = false;
+
+            if (txtUbicacion_numinv.Text!="")
+            {
+                try
+                {
+                    state=keyBL.AgregarUbicacion(new Ubicacion() 
+                    { 
+                        num_inv=txtUbicacion_numinv.Text,
+                        nombre_laboratorio=ddlUbicacion_lab_tipo.Text
+                    },ref estado,ref mensaje);
+                }
+                catch (Exception me)
+                {
+                    titulo = "Lo sentimos";
+                    mensaje = mensaje + " " + e;
+                    tipo = 2;
+                }
+                if (state)
+                {
+                    titulo = "Ubicación agregada";
+                    mensaje = mensaje + ". Muchas gracias por agregar un registo";
+                    tipo = 3;
+                    Response.Redirect("Default.aspx");
+                }
+            }
+            else
+            {
+                titulo = "Lo sentimos";
+                mensaje = "Debes tener un num de inventario para que puedas agregar una Ubicación";
+                tipo = 2;
+            }
+            Message("GuardadoUbicación",titulo,mensaje,tipo);
+        }
     }
 }

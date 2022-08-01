@@ -51,6 +51,15 @@ namespace ClientLayer
         protected global::System.Web.UI.WebControls.Label lblsub_cantdisk;
 
         /// <summary>
+        /// Control lblsub_ubicacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblsub_ubicacion;
+
+        /// <summary>
         /// Control lblCPUGenerico_tipo.
         /// </summary>
         /// <remarks>
@@ -472,6 +481,51 @@ namespace ClientLayer
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCantDisc;
+
+        /// <summary>
+        /// Control lblUbicacion_numinv.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUbicacion_numinv;
+
+        /// <summary>
+        /// Control txtUbicacion_numinv.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtUbicacion_numinv;
+
+        /// <summary>
+        /// Control lblUbicacion_lab_tipo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUbicacion_lab_tipo;
+
+        /// <summary>
+        /// Control ddlUbicacion_lab_tipo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlUbicacion_lab_tipo;
+
+        /// <summary>
+        /// Control btnUbicacion_.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUbicacion_;
 
         /// <summary>
         /// Control lbl_cpu.

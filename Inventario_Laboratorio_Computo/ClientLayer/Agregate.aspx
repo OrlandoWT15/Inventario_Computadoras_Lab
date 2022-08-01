@@ -33,6 +33,10 @@
                     <asp:Label ID="lblsub_cantdisk" runat="server" Text="Espacio de almacenamiento" Visible="false">
                     </asp:Label>
                     <!-- END View 3 -->
+                    <!-- View 4 -->
+                    <asp:Label ID="lblsub_ubicacion" runat="server" Text="Ubicación" Visible="false">
+                    </asp:Label>
+                    <!-- END View 4 -->
                 </div>
                 <div class="card-body">
                     <!-- View 1 -->
@@ -137,6 +141,19 @@
                         <asp:Button ID="btnCantDisc" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="btnCantDisc_Click" Visible="false"/>
                     </div>
                     <!-- END View 3 -->
+                    <!-- View 4 -->
+                    <div>
+                        <div class="form-group">
+                            <asp:Label ID="lblUbicacion_numinv" runat="server" Text="N. de Inventario" Visible="false"></asp:Label>
+                            <asp:TextBox ID="txtUbicacion_numinv" runat="server"  Visible="false" Enabled="false" CssClass="form-control disabledTextInput"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <asp:Label ID="lblUbicacion_lab_tipo" runat="server" Text="Laboratorio" Visible="false"></asp:Label>
+                            <asp:DropDownList ID="ddlUbicacion_lab_tipo" runat="server" Visible="false" CssClass="form-control"></asp:DropDownList>
+                        </div>
+                        <asp:Button ID="btnUbicacion_" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="btnUbicacion__Click" Visible="false"/>
+                    </div>
+                    <!-- END View 4 -->
                 </div>
             </div>
         </div>

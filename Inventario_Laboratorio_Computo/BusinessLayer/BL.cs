@@ -1264,7 +1264,7 @@ namespace BusinessLayer
         }
         /************************************************************/
         /*                   U B I C A C I O N                     */
-        public Boolean AgregarImagenesUbicacion(Ubicacion newImaUbicacion, ref string estado, ref string salida)
+        public Boolean AgregarUbicacion(Ubicacion newImaUbicacion, ref string estado, ref string salida)
         {
             SqlParameter[] parametro = null;
             string comando = "";
@@ -1283,7 +1283,7 @@ namespace BusinessLayer
             }
             return respuesta;
         }
-        public DataTable InfoImagenesUbicacion(ref string estado, ref string salida)
+        public DataTable InfoUbicacion(ref string estado, ref string salida)
         {
             string instruccion = "";
             DataSet obtener = null;
@@ -1299,7 +1299,7 @@ namespace BusinessLayer
             }
             return tabla;
         }
-        public Boolean ActualizarImagenesUbicacion(Ubicacion newImaUbicacion, ref string estado, ref string salida)
+        public Boolean ActualizarUbicacion(Ubicacion newImaUbicacion, ref string estado, ref string salida)
         {
             SqlParameter[] parametro = null;
             string comando = "";
@@ -1318,7 +1318,7 @@ namespace BusinessLayer
             }
             return respuesta;
         }
-        public Boolean EliminarImagenesUbicacion(Ubicacion dropImaUbicacion, ref string estado, ref string salida)
+        public Boolean EliminarUbicacion(Ubicacion dropImaUbicacion, ref string estado, ref string salida)
         {
             SqlParameter[] parametro = null;
             string comando = "";
