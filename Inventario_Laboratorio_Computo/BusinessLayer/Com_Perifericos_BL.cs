@@ -168,6 +168,28 @@ namespace BusinessLayer
 
             return respuesta;
         }
+        public Boolean MostrarMonitorLaboratorio(Monitor labmon, ref SqlParameter[] evaluacion, ref string instruccion)
+        {
+            Boolean respuesta = false;
+            if (evaluacion == null)
+            {
+                instruccion = "SELECT com.num_inv as 'N. Inventario',mo.tamano,mo.conectores as 'Conector', ubi.nombre_laboratorio as 'Laboratorio'" +
+                    " FROM monitor as mo" +
+                    " INNER JOIN computadorafinal as com ON com.id_mong = mo.id_monitor" +
+                    " INNER JOIN ubicacion as ubi ON ubi.num_inv = com.num_inv" +
+                    " Where mo.id_monitor = @ID";
+                evaluacion = new SqlParameter[]
+                {
+                    new SqlParameter("@ID",SqlDbType.Int),
+                };
+                evaluacion[0].Value = labmon.Id;
+                respuesta = true;
+            }
+            else
+                respuesta = false;
+
+            return respuesta;
+        }
         /*Mostrar*/
 
         /*Actualizar*/

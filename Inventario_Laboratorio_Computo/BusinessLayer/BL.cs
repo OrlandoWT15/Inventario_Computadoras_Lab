@@ -689,6 +689,30 @@ namespace BusinessLayer
             }
             return tabla;
         }
+        public DataTable InfoMonitorLaboratorio(Monitor mon, ref string estado, ref string salida)
+        {
+            SqlParameter[] parametro = null;
+            string comando = "";
+            DataSet obtener = null;
+            DataTable tabla = null;
+
+            estado = "";
+            salida = "";
+
+            if (key_PBL.MostrarMonitorLaboratorio(mon, ref parametro, ref comando))
+            {
+                obtener = keyDAL.BaseSeguraDBLectura(comando, keyDAL.EstadoCn(ref estado), ref salida, parametro);
+                if (obtener != null)
+                {
+                    tabla = obtener.Tables[0];
+                }
+            }
+            else
+            {
+                tabla = null;
+            }
+            return tabla;
+        }
         public Boolean ActualizarMonitor(Monitor newMoni, ref string estado, ref string salida)
         {
             SqlParameter[] parametro = null;
@@ -1338,7 +1362,22 @@ namespace BusinessLayer
             return respuesta;
         }
         /*                   A D I C I O N A L                  */
+        public DataTable InfoUbicacionEstadoSolido(ref string estado, ref string salida)
+        {
+            string instruccion = "";
+            DataSet obtener = null;
+            DataTable tabla = null;
 
+            if (key_UBL.MostrarUbicacionEstadoSolido(ref instruccion))
+            {
+                obtener = keyDAL.DBLectura(instruccion, keyDAL.EstadoCn(ref estado), ref salida);
+                if (obtener != null)
+                {
+                    tabla = obtener.Tables[0];
+                }
+            }
+            return tabla;
+        }
         /************************************************************/
         /*#########################################################*/
 
@@ -1849,6 +1888,22 @@ namespace BusinessLayer
             DataTable tabla = null;
 
             if (key_CFBL.MostrarComponenCompFinal(ref instruccion))
+            {
+                obtener = keyDAL.DBLectura(instruccion, keyDAL.EstadoCn(ref estado), ref salida);
+                if (obtener != null)
+                {
+                    tabla = obtener.Tables[0];
+                }
+            }
+            return tabla;
+        }
+        public DataTable InfoCompFinalCompletoFull(ref string estado, ref string salida)
+        {
+            string instruccion = "";
+            DataSet obtener = null;
+            DataTable tabla = null;
+
+            if (key_CFBL.MostrarComponenCompleto(ref instruccion))
             {
                 obtener = keyDAL.DBLectura(instruccion, keyDAL.EstadoCn(ref estado), ref salida);
                 if (obtener != null)

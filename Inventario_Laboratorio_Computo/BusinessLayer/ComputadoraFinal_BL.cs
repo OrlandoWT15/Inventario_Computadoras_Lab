@@ -84,6 +84,28 @@ namespace BusinessLayer
 
             return respuesta;
         }
+        public Boolean MostrarComponenCompleto(ref string instruccion)
+        {
+            Boolean respuesta;
+            if (instruccion == "")
+            {
+                instruccion = "SELECT cf.num_inv as 'N. Serie',cf.num_scpu as 'N. CPU',cpu.Modelo,cf.num_steclado as 'N. Teclado',te.conector,cf.num_smouse as 'N. mouse',mu.conector,cf.num_smonitor as 'N. Monitor',mo.tamano AS 'Tamaño',dd.Capacidad,cf.estado,ic.urlimage_one,ic.urlimage_two,ic.urlimage_three,ra.Capacidad AS 'Capacidad de RAM',ra.Velocidad AS 'Velocidad de RAM'" +
+                    " FROM cantDisc as cd" +
+                    " INNER JOIN computadorafinal as cf ON cd.num_inv = cf.num_inv" +
+                    " INNER JOIN CPU_Generico as cpu ON cf.id_cpug = cpu.id_CPU" +
+                    " INNER JOIN RAM as ra ON cpu.f_tipoRam = ra.id_RAM" +
+                    " INNER JOIN teclado as te ON cf.id_tecladog = te.id_teclado" +
+                    " INNER JOIN monitor as mo ON cf.id_mong = mo.id_monitor" +
+                    " INNER JOIN mouse as mu ON cf.id_mousg = mu.id_mouse" +
+                    " INNER JOIN DiscoDuro as dd ON cd.id_Disco = dd.id_Disco" +
+                    " INNER JOIN Imagenes_ComFinal as ic ON ic.f_ComputadoraFinal = cf.num_inv";
+                respuesta = true;
+            }
+            else
+                respuesta = false;
+
+            return respuesta;
+        }
         /*Mostrar*/
 
         /*Actualizar*/
@@ -138,7 +160,9 @@ namespace BusinessLayer
 
             if (evaluacion == null)
             {
-                instruccion = "DELETE FROM computadorafinal where num_inv = @num_inv;";
+                instruccion = "DELETE FROM cantDisc where num_inv= @num_inv " +
+                    " DELETE FROM Imagenes_ComFinal where f_ComputadoraFinal= @num_inv " +
+                    " DELETE FROM computadorafinal where  num_inv= @num_inv";
                 evaluacion = new SqlParameter[]
                 {
                     new SqlParameter("@num_inv",SqlDbType.VarChar,10),

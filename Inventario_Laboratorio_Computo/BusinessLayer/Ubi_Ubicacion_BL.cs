@@ -62,7 +62,26 @@ namespace BusinessLayer
             Boolean respuesta;
             if (instruccion == "")
             {
-                instruccion = "SELECT * FROM ubicacion";
+                instruccion = "SELECT num_inv AS 'N. Inventario',nombre_laboratorio AS 'Laboratorio' FROM ubicacion";
+                respuesta = true;
+            }
+            else
+                respuesta = false;
+
+            return respuesta;
+        }
+        public Boolean MostrarUbicacionEstadoSolido(ref string instruccion)
+        {
+            Boolean respuesta;
+            if (instruccion == "")
+            {
+                instruccion = "SELECT la.nombre_laboratorio,com.num_inv,dis.TipoDisco" +
+                    " FROM ubicacion as ubi" +
+                    " INNER JOIN laboratorio as la ON ubi.nombre_laboratorio = la.nombre_laboratorio" +
+                    " INNER jOIN computadorafinal as com ON ubi.num_inv = com.num_inv" +
+                    " INNER JOIN cantDisc as can ON can.num_inv = com.num_inv" +
+                    " INNER JOIN DiscoDuro as dis ON Can.id_Disco = dis.id_Disco" +
+                    " Where TipoDisco = 'SSD' OR TipoDisco = 'M.2 SSD'";
                 respuesta = true;
             }
             else

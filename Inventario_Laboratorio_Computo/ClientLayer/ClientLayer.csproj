@@ -87,6 +87,8 @@
     <Content Include="js\demo\datatables-demo.js" />
     <Content Include="js\sb-admin-2.js" />
     <Content Include="js\sb-admin-2.min.js" />
+    <Content Include="Resources\icons\pen-to-square-regular.svg" />
+    <Content Include="Resources\icons\trash-solid.svg" />
     <Content Include="vendor\bootstrap\js\bootstrap.bundle.js" />
     <Content Include="vendor\bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="vendor\bootstrap\js\bootstrap.js" />
@@ -1979,6 +1981,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Resources\computadora\" />
     <Folder Include="Resources\cpu\" />
   </ItemGroup>
   <PropertyGroup>
