@@ -25,6 +25,14 @@
                     <asp:Label ID="lblsub_CPUGenerico" runat="server" Text="CPU Completo" Visible="false">
                     </asp:Label>
                     <!-- END View 1 -->
+                    <!-- View 2 -->
+                    <asp:Label ID="lblsub_ComFinal" runat="server" Text="Computadora Final" Visible="false">
+                    </asp:Label>
+                    <!-- END View 2 -->
+                     <!-- View 3 -->
+                    <asp:Label ID="lblsub_cantdisk" runat="server" Text="Espacio de almacenamiento" Visible="false">
+                    </asp:Label>
+                    <!-- END View 3 -->
                 </div>
                 <div class="card-body">
                     <!-- View 1 -->
@@ -64,6 +72,71 @@
                         <asp:Button ID="btnCPUGenerico" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="btnCPUGenerico_Click" Visible="true"/>
                     </div>
                     <!-- END View 1 -->
+                    <!-- View 2 -->
+                    <div>
+                        <div class="form-group">
+                            <asp:Label ID="lblComputadoraFinal_inv" runat="server" Text="N. de Inventario" Visible="false"></asp:Label>
+                            <asp:TextBox ID="txtComputadoraFinal_inv" runat="server"  Visible="false" Enabled="false" CssClass="form-control disabledTextInput"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <asp:Label ID="lblComputadoraFinal_cpu" runat="server" Text="N. de Serie del CPU" Visible="false"></asp:Label>
+                            <asp:TextBox ID="txtComputadoraFinal_cpu" runat="server" Visible="false" Enabled="false" CssClass="form-control disabledTextInput"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <asp:Label ID="lblComputadoraFinal_cpu_tipo" runat="server" Text="Tipo de CPU" Visible="false"></asp:Label>
+                            <asp:DropDownList ID="ddlComputadoraFinal_cpu_tipo" runat="server" Visible="false" CssClass="form-control"></asp:DropDownList>
+                        </div>
+                        <div class="form-group">
+                            <asp:Label ID="lblComputadoraFinal_teclado" runat="server" Text="N. de Serie de Teclado" Visible="false"></asp:Label>
+                            <asp:TextBox ID="txtComputadoraFinal_teclado" runat="server"  Visible="false" Enabled="false" CssClass="form-control disabledTextInput"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <asp:Label ID="lblComputadoraFinal_teclado_tipo" runat="server" Text="Teclado" Visible="false"></asp:Label>
+                            <asp:DropDownList ID="ddlComputadoraFinal_teclado_tipo" runat="server"  Visible="false" CssClass="form-control"></asp:DropDownList>
+                        </div>
+                        <div class="form-group">
+                            <asp:Label ID="lblComputadoraFinal_mouse" runat="server" Text="N. de Serie de Mouse" Visible="false"></asp:Label>
+                            <asp:TextBox ID="txtComputadoraFinal_mouse" runat="server"  Visible="false" Enabled="false" CssClass="form-control disabledTextInput"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <asp:Label ID="lblComputadoraFinal_mouse_tipo" runat="server" Text="Mouse" Visible="false"></asp:Label>
+                            <asp:DropDownList ID="ddlComputadoraFinal_mouse_tipo" runat="server"  Visible="false" CssClass="form-control"></asp:DropDownList>
+                        </div>
+                        <div class="form-group">
+                            <asp:Label ID="lblComputadoraFinal_monitor" runat="server" Text="N. de Serie de Monitor" Visible="false"></asp:Label>
+                            <asp:TextBox ID="txtComputadoraFinal_monitor" runat="server"  Visible="false" Enabled="false" CssClass="form-control disabledTextInput"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <asp:Label ID="lblComputadoraFinal_monitor_tipo" runat="server" Text="Monitor" Visible="false"></asp:Label>
+                            <asp:DropDownList ID="ddlComputadoraFinal_monitor_tipo" runat="server"  Visible="false" CssClass="form-control"></asp:DropDownList>
+                        </div>
+                        <div class="form-group">
+                            <asp:Label ID="lblComputadoraFinal_estado" runat="server" Text="Estado" Visible="false"></asp:Label>
+                            <asp:RadioButtonList ID="rblComputadoraFinal_estado" runat="server" Visible="false" OnLoad="rblComputadoraFinal_estado_Load" AutoPostBack="true"> 
+                            </asp:RadioButtonList>
+                        </div>
+                        <div class="form-group">
+                            <asp:Label ID="lblComputadoraFinal_image" runat="server" Text="Imagen" Visible="false"></asp:Label>
+                            <asp:FileUpload ID="fuComputadoraFinal_image_One" runat="server" CssClass="form-control-file btn-dark disabled" Visible="false" Enabled="false"/>
+                            <asp:FileUpload ID="fuComputadoraFinal_image_Two" runat="server" CssClass="form-control-file btn-dark disabled" Visible="false" Enabled="false"/>
+                            <asp:FileUpload ID="fuComputadoraFinal_image_Three" runat="server" CssClass="form-control-file btn-dark disabled" Visible="false" Enabled="false"/>
+                        </div>
+                        <asp:Button ID="btnComputadoraFinal" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="btnComputadoraFinal_Click" Visible="false"/>
+                    </div>
+                    <!-- END View 2 -->
+                    <!-- View 3 -->
+                    <div>
+                        <div class="form-group">
+                            <asp:Label ID="lblCantDisc_numinv" runat="server" Text="N. de Inventario" Visible="false"></asp:Label>
+                            <asp:TextBox ID="txtCantDisc_numinv" runat="server"  Visible="false" Enabled="false" CssClass="form-control disabledTextInput"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <asp:Label ID="lblCantDisc_disc_tipo" runat="server" Text="Almacenamiento" Visible="false"></asp:Label>
+                            <asp:DropDownList ID="ddlCantDisc_disc_tipo" runat="server" Visible="false" CssClass="form-control"></asp:DropDownList>
+                        </div>
+                        <asp:Button ID="btnCantDisc" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="btnCantDisc_Click" Visible="false"/>
+                    </div>
+                    <!-- END View 3 -->
                 </div>
             </div>
         </div>
@@ -83,6 +156,13 @@
                 <li class="nav-item">
                     <asp:LinkButton ID="lbl_com" runat="server" CssClass="text-white" OnClick="lbl_com_Click" Enabled="true">
                         <i class="fas fa-fw fa-desktop"></i>
+                    </asp:LinkButton>
+                </li>
+                <hr class="sidebar-divider my-0">
+                <br/>
+                <li class="nav-item">
+                    <asp:LinkButton ID="lbl_datadisk" runat="server" CssClass="text-white" OnClick="lbl_datadisk_Click" Enabled="true">
+                        <i class="fas fa-fw fa-database"></i>
                     </asp:LinkButton>
                 </li>
                 <hr class="sidebar-divider my-0">

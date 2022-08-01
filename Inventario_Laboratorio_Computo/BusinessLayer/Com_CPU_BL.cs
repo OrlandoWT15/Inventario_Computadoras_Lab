@@ -102,7 +102,7 @@ namespace BusinessLayer
             Boolean respuesta;
             if (instruccion == "")
             {
-                instruccion = "SELECT tcpu.Tipo,tcpu.Familia,tcpu.Velocidad,mcpu.modeloCPU,gcpu.Modelo,ma.Marca,gcpu.Descripcion,icpu.urlimage_one" +
+                instruccion = "SELECT gcpu.id_CPU,tcpu.Tipo,tcpu.Familia,tcpu.Velocidad,mcpu.modeloCPU,gcpu.Modelo,ma.Marca,gcpu.Descripcion,icpu.urlimage_one" +
                     " FROM CPU_Generico as gcpu" +
                     " INNER JOIN Tipo_CPU as tcpu ON gcpu.f_Tcpu = tcpu.id_Tcpu" +
                     " INNER JOIN ModeloCPU as mcpu ON tcpu.idModelocpu = mcpu.id_modcpu" +

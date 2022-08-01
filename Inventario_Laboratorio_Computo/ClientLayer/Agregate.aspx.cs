@@ -32,10 +32,13 @@ namespace ClientLayer
                 Session["TipoCPU"] = SelectTipoCPU();
                 Session["TipoRAM"] = SelectTipoRam();
                 Session["MarcaModeloCPU"] = SelectMarcaModeloCPU();
+                Session["CPUGenerico"] = SelectCPUGenerico();
+                Session["Teclado"] = SelectTeclado();
+                Session["Mouse"] = SelectMouse();
+                Session["Monitor"] = SelectMonitor();
+                Session["Estado"] = Conectores(1);
+                Session["DiscoD"] = SelectDuroD();
 
-                //Session["Teclado"] = SelectMarcaTeclado();
-                //Session["Mouse"] = SelectMarcaMouse();
-                //Session["Monitor"] = SelectMarcaMonitor();
                 //Session["DiscoDuro"] = SelectMarcaDiscoDuro();
 
                 FillDDL();
@@ -66,6 +69,48 @@ namespace ClientLayer
             string vacio = "";
             return keyBL.InfoComponenteMarcaModeloCPU(ref vacio, ref vacio);
         }
+        private DataTable SelectCPUGenerico()
+        {
+            string vacio = "";
+            return keyBL.InfoCPUGenericoCompleto(ref vacio, ref vacio);
+        }
+
+        private DataTable SelectTeclado()
+        {
+            string vacio = "";
+            return keyBL.InfoTecladoCompleto(ref vacio, ref vacio);
+        }
+
+        private DataTable SelectMouse()
+        {
+            string vacio = "";
+            return keyBL.InfoMouseCompleto(ref vacio, ref vacio);
+        }
+
+        private DataTable SelectMonitor()
+        {
+            string vacio = "";
+            return keyBL.InfoMonitorCompleto(ref vacio, ref vacio);
+        }
+        private DataTable SelectDuroD()
+        {
+            string vacio = "";
+            return keyBL.InfoDiscoduro(ref vacio, ref vacio);
+        }
+
+        private ListItemCollection Conectores(int estado = 0)
+        {
+            ListItemCollection items = null;
+            if (estado == 1)
+            {
+                items = new ListItemCollection
+                {
+                    new ListItem("Bueno", "0"),
+                    new ListItem("Malo", "1"),
+                };
+            }
+            return items;
+        }
 
         private DataTable SelectVelocidadRam(Int16 capacidad)
         {
@@ -74,40 +119,11 @@ namespace ClientLayer
             { 
                 Capacidad=capacidad            
             },ref vacio,ref vacio);
-        }
-        private DataTable SelectMarcaTeclado()
-        {
-            string vacio = "";
-            return keyBL.InfoComponenteMarcaTeclado(ref vacio, ref vacio);
-        }
+        }   
         private DataTable SelectMarcaMouse()
         {
             string vacio = "";
             return keyBL.InfoComponenteMarcaMouse(ref vacio, ref vacio);
-        }
-        private DataTable SelectMarcaMonitor()
-        {
-            string vacio = "";
-            return keyBL.InfoComponenteMarcaMonitor(ref vacio, ref vacio);
-        }
-        private DataTable SelectMarcaDiscoDuro()
-        {
-            string vacio = "";
-            return keyBL.InfoComponenteMarcaDiscoDuro(ref vacio, ref vacio);
-        }
-        private ListItemCollection Conectores(int estado)
-        {
-            ListItemCollection items = null;
-            if (estado == 1)
-            {
-                items = new ListItemCollection
-                {
-                    new ListItem("--Selecciona--", ""),
-                    new ListItem("USB", "USB"),
-                    new ListItem("MINIDIN", "MINIDIN"),
-                };
-            }
-            return items;
         }
 
         private void Estado()
@@ -118,6 +134,7 @@ namespace ClientLayer
                 lbl_cpu.CssClass = trueLink;
                 lbltitulo.Text = "CPU Completo";
                 lbl_com.CssClass = postLink;
+                lbl_datadisk.CssClass = postLink;
                 lbl_ubi.CssClass = postLink;
                 
             }
@@ -126,14 +143,24 @@ namespace ClientLayer
                 lbl_com.CssClass = trueLink;
                 lbltitulo.Text = "Computadora Registro";
                 lbl_cpu.CssClass = postLink;
+                lbl_datadisk.CssClass = postLink;
                 lbl_ubi.CssClass = postLink;
                 
+            }
+            if (lbl_datadisk.Enabled != true)
+            {
+                lbl_datadisk.CssClass = trueLink;
+                lbltitulo.Text = "Estado de almacenamiento";
+                lbl_ubi.CssClass = postLink;
+                lbl_cpu.CssClass = postLink;
+                lbl_com.CssClass = postLink;
             }
             if (lbl_ubi.Enabled != true)
             {
                 lbl_ubi.CssClass = trueLink;
                 lbltitulo.Text = "Ubicación";
                 lbl_cpu.CssClass = postLink;
+                lbl_datadisk.CssClass = postLink;
                 lbl_com.CssClass = postLink;
             }
         }
@@ -214,14 +241,97 @@ namespace ClientLayer
         {
             if (estado != true)
             {
+                lblComputadoraFinal_inv.Visible = false;
+                lblComputadoraFinal_cpu.Visible = false;
+                lblComputadoraFinal_cpu_tipo.Visible = false;
+                lblComputadoraFinal_teclado.Visible = false;
+                lblComputadoraFinal_teclado_tipo.Visible = false;
+                lblComputadoraFinal_monitor.Visible = false;
+                lblComputadoraFinal_monitor_tipo.Visible = false;
+                lblComputadoraFinal_mouse.Visible = false;
+                lblComputadoraFinal_mouse_tipo.Visible = false;
+                lblComputadoraFinal_estado.Visible = false;
+                lblComputadoraFinal_image.Visible = false;
 
+                txtComputadoraFinal_inv.Visible = false;
+                txtComputadoraFinal_cpu.Visible = false;
+                txtComputadoraFinal_teclado.Visible = false;
+                txtComputadoraFinal_monitor.Visible = false;
+                txtComputadoraFinal_mouse.Visible = false;
+                
+                ddlComputadoraFinal_cpu_tipo.Visible = false;
+                ddlComputadoraFinal_teclado_tipo.Visible = false;
+                ddlComputadoraFinal_monitor_tipo.Visible = false;
+                ddlComputadoraFinal_mouse_tipo.Visible = false;
+                
+
+                fuComputadoraFinal_image_One.Visible = false;
+                fuComputadoraFinal_image_Two.Visible = false;
+                fuComputadoraFinal_image_Three.Visible = false;
+                btnComputadoraFinal.Visible = false;
+                rblComputadoraFinal_estado.Visible = false;
             }
             else
             {
+                lblComputadoraFinal_inv.Visible = true;
+                lblComputadoraFinal_cpu.Visible = true;
+                lblComputadoraFinal_cpu_tipo.Visible = true;
+                lblComputadoraFinal_teclado.Visible = true;
+                lblComputadoraFinal_teclado_tipo.Visible = true;
+                lblComputadoraFinal_monitor.Visible = true;
+                lblComputadoraFinal_monitor_tipo.Visible = true;
+                lblComputadoraFinal_mouse.Visible = true;
+                lblComputadoraFinal_mouse_tipo.Visible = true;
+                lblComputadoraFinal_estado.Visible = true;
+                lblComputadoraFinal_image.Visible = true;
 
+                txtComputadoraFinal_inv.Visible = true;
+                txtComputadoraFinal_cpu.Visible = true;
+                txtComputadoraFinal_teclado.Visible = true;
+                txtComputadoraFinal_monitor.Visible = true;
+                txtComputadoraFinal_mouse.Visible = true;
+
+                ddlComputadoraFinal_cpu_tipo.Visible = true;
+                ddlComputadoraFinal_teclado_tipo.Visible = true;
+                ddlComputadoraFinal_monitor_tipo.Visible = true;
+                ddlComputadoraFinal_mouse_tipo.Visible = true;
+                
+
+                fuComputadoraFinal_image_One.Visible = true;
+                fuComputadoraFinal_image_Two.Visible = true;
+                fuComputadoraFinal_image_Three.Visible = true;
+                btnComputadoraFinal.Visible = true;
+                rblComputadoraFinal_estado.Visible = true;
             }
         }
         private void Vista_3(Boolean estado = false)
+        {
+            if (estado != true)
+            {
+                lblsub_cantdisk.Visible = false;    
+                lblCantDisc_numinv.Visible = false;
+                lblCantDisc_disc_tipo.Visible = false;
+
+                txtCantDisc_numinv.Visible = false;
+
+                ddlCantDisc_disc_tipo.Visible = false;
+
+                btnCantDisc.Visible = false;
+            }
+            else
+            {
+                lblsub_cantdisk.Visible = true;
+                lblCantDisc_numinv.Visible = true;
+                lblCantDisc_disc_tipo.Visible = true;
+
+                txtCantDisc_numinv.Visible = true;
+
+                ddlCantDisc_disc_tipo.Visible = true;
+
+                btnCantDisc.Visible = true;
+            }
+        }
+        private void Vista_4(Boolean estado = false)
         {
             if (estado != true)
             {
@@ -229,7 +339,6 @@ namespace ClientLayer
             }
             else
             {
-
 
             }
         }
@@ -240,6 +349,7 @@ namespace ClientLayer
                 //Mas vistas
                 Vista_3();
                 Vista_2();
+                lbl_datadisk.Enabled = true;
                 lbl_ubi.Enabled = true;
                 lbl_com.Enabled = true;
                 lbl_cpu.Enabled = false;
@@ -250,6 +360,7 @@ namespace ClientLayer
             {
                 Vista_3();
                 Vista_1();
+                lbl_datadisk.Enabled = true;
                 lbl_ubi.Enabled = true;
                 lbl_cpu.Enabled = true;
                 lbl_com.Enabled = false;
@@ -262,9 +373,22 @@ namespace ClientLayer
                 Vista_1();
                 lbl_com.Enabled = true;
                 lbl_cpu.Enabled = true;
-                lbl_ubi.Enabled = false;
+                lbl_ubi.Enabled = true;
+                lbl_datadisk.Enabled = false;
                 Estado();
                 Vista_3(true);
+            }
+            if (i == 3)
+            {
+                Vista_3();
+                Vista_2();
+                Vista_1();
+                lbl_datadisk.Enabled = true;
+                lbl_com.Enabled = true;
+                lbl_cpu.Enabled = true;
+                lbl_ubi.Enabled = false;
+                Estado();
+                Vista_4(true);
             }
         }
         private void fillRam()
@@ -293,7 +417,93 @@ namespace ClientLayer
                 ddlCPUGenerico_tipogabinete.Items.Add(i);
             }
         }
+        private void fillcpugenerico()
+        {
+            DataTable cpu = null;
+            cpu = (DataTable)Session["CPUGenerico"];
+            ListItem i = null;
 
+            ddlComputadoraFinal_cpu_tipo.Items.Insert(0, "--- Selecciona una Opción ---");
+            foreach (DataRow c in cpu.Rows)
+            {
+                i = new ListItem("Tipo de CPU :"+c["Tipo"]+"| Modelo :"+c["Modelo"],c["id_CPU"].ToString());
+                ddlComputadoraFinal_cpu_tipo.Items.Add(i);
+            }
+        }
+        private void fillteclado()
+        {
+            DataTable tec = null;
+            tec = (DataTable)Session["Teclado"];
+            ListItem i = null;
+
+            ddlComputadoraFinal_teclado_tipo.Items.Insert(0, "--- Selecciona una Opción ---");
+            foreach(DataRow t in tec.Rows)
+            {
+                i = new ListItem("Conector :"+t["conector"]+"| Marca :"+t["Marca"],t["id_teclado"].ToString());
+                ddlComputadoraFinal_teclado_tipo.Items.Add(i);
+            }
+        }
+        private void fillmouse()
+        {
+            DataTable mo = null;
+            mo = (DataTable)Session["Mouse"];
+            ListItem i = null;
+
+            ddlComputadoraFinal_mouse_tipo.Items.Insert(0, "--- Selecciona una Opción ---");
+            foreach (DataRow m in mo.Rows)
+            {
+                i = new ListItem("Conector :"+m["conector"]+"| Marca :"+m["Marca"],m["id_mouse"].ToString());
+                ddlComputadoraFinal_mouse_tipo.Items.Add(i);
+            }
+        }
+        private void fillmonitor()
+        {
+            DataTable mo = null;
+            mo = (DataTable)Session["Monitor"];
+            ListItem i = null;
+
+            ddlComputadoraFinal_monitor_tipo.Items.Insert(0, "--- Selecciona una Opción ---");
+            foreach (DataRow m in mo.Rows)
+            {
+                i = new ListItem("Conectores :"+m["conectores"]+"| Tamaño :"+m["tamano"],m["id_monitor"].ToString());
+                ddlComputadoraFinal_monitor_tipo.Items.Add(i );
+            }
+        }
+        private void fillDiscoD()
+        {
+            DataTable dd = null;
+            dd = (DataTable)Session["DiscoD"];
+            ListItem i = null;
+
+            ddlCantDisc_disc_tipo.Items.Insert(0, "--- Selecciona una Opción ---");
+            foreach (DataRow d in dd.Rows)
+            {
+                i = new ListItem("Tipo de almacenamiento :"+d["TipoDisco"]+ " | Conector :"+d["conector"]+" | Marca :"+d["Marca"]+" | Extra :"+d["Extra"], d["id_Disco"].ToString());
+                ddlCantDisc_disc_tipo.Items.Add(i);
+            }
+        }
+        private string fillnumber(Random numref)
+        {
+            Random num = null;
+            string inv = "";
+            num = numref;
+            for (int i=0;i<10;i++)
+            {
+                inv = inv + num.Next(0,9);
+            }
+            num = null; 
+            return inv;
+        }
+        private void fillnumnberCollection()
+        {
+            Random num = new Random();
+
+            txtComputadoraFinal_inv.Text = fillnumber(num);
+            txtComputadoraFinal_cpu.Text = fillnumber( num);
+            txtComputadoraFinal_teclado.Text = fillnumber( num);
+            txtComputadoraFinal_mouse.Text = fillnumber( num);
+            txtComputadoraFinal_monitor.Text = fillnumber( num);
+        }
         private void FillDDL()
         {
             
@@ -307,6 +517,20 @@ namespace ClientLayer
             ddlmarca_CPUGenerico.DataBind();
             ddlmarca_CPUGenerico.Items.Insert(0, "--- Selecciona una Opción ---");
             //Vista1
+
+            //Vista2
+            fillcpugenerico();
+            fillteclado();
+            fillmouse();
+            fillmonitor();
+            rblComputadoraFinal_estado.DataSource = (ListItemCollection)Session["Estado"];
+            rblComputadoraFinal_estado.DataBind();
+            fillnumnberCollection();
+            //Vista2
+
+            //Vista3
+            fillDiscoD();
+            //Vista3
         }
 
         protected void lbl_cpu_Click(object sender, EventArgs e)
@@ -320,6 +544,10 @@ namespace ClientLayer
         }
 
         protected void lbl_ubi_Click(object sender, EventArgs e)
+        {
+            PastPage(2);
+        }
+        protected void lbl_datadisk_Click(object sender, EventArgs e)
         {
             PastPage(2);
         }
@@ -349,6 +577,19 @@ namespace ClientLayer
             ddlmarca_CPUGenerico.ClearSelection();
             txtCPUGenerico_descripcion.Text="";
             txtCPUGenerico_modelo.Text="";
+        }
+        protected void rblComputadoraFinal_estado_Load(object sender, EventArgs e)
+        {
+            if (rblComputadoraFinal_estado.SelectedIndex == 1)
+            {
+                fuComputadoraFinal_image_One.Enabled = true;
+                fuComputadoraFinal_image_Two.Enabled = true;
+                fuComputadoraFinal_image_Three.Enabled = true;
+            }
+            if (rblComputadoraFinal_estado.SelectedIndex == 0)
+            {
+                fuComputadoraFinal_image_One.Enabled = true;
+            }
         }
         protected void btnCPUGenerico_Click(object sender, EventArgs e)
         {
@@ -417,6 +658,209 @@ namespace ClientLayer
             }
 
             Message("CPUGenerico",titulo,mensaje,tipo);
+        }
+
+        protected void btnComputadoraFinal_Click(object sender, EventArgs e)
+        {
+            string mensaje = "", estado = "", titulo = "", ruta = "", strFilePath = "", id = "", id_2 = "", id_3 = "", name = "", name_2="", name_3="", ext="", ext_2="", ext_3="";
+            int tipo = 0, tam = 0, tam_2 = 0, tam_3 = 0;
+            Boolean state = false ;
+
+            try
+            {
+                state = keyBL.AgregarCompFinal(new ComputadoraFinal()
+                { 
+                    num_inv=txtComputadoraFinal_inv.Text,
+                    num_scpu=txtComputadoraFinal_cpu.Text,
+                    F_cpug=Convert.ToInt32(ddlComputadoraFinal_cpu_tipo.SelectedValue),
+                    num_steclado=txtComputadoraFinal_mouse.Text,
+                    F_tecladog= Convert.ToInt32(ddlComputadoraFinal_teclado_tipo.SelectedValue),
+                    num_smouse =txtComputadoraFinal_mouse.Text,
+                    F_mouseg= Convert.ToInt32(ddlComputadoraFinal_mouse_tipo.SelectedValue),
+                    num_smonitor=txtComputadoraFinal_monitor.Text,
+                    F_mong= Convert.ToInt32(ddlComputadoraFinal_monitor_tipo.SelectedValue),
+                    Estado=rblComputadoraFinal_estado.SelectedItem.Text,
+                },ref estado,ref mensaje);
+                if (state)
+                {
+                    ruta = Server.MapPath("~/Resources/cpu/");
+                    if (rblComputadoraFinal_estado.SelectedItem.Text == "Malo")
+                    {
+
+                        if (fuComputadoraFinal_image_One.HasFile && fuComputadoraFinal_image_Two.HasFile && fuComputadoraFinal_image_Three.HasFile)
+                        {
+                            ext = Path.GetExtension(fuComputadoraFinal_image_One.FileName).ToLower();
+                            ext_2 = Path.GetExtension(fuComputadoraFinal_image_Two.FileName).ToLower();
+                            ext_3 = Path.GetExtension(fuComputadoraFinal_image_Three.FileName).ToLower();
+                            name = fuComputadoraFinal_image_One.FileName;
+                            name_2 = fuComputadoraFinal_image_Two.FileName;
+                            name_3 = fuComputadoraFinal_image_Three.FileName;
+                            tam = fuComputadoraFinal_image_One.PostedFile.ContentLength;
+                            tam_2 = fuComputadoraFinal_image_Two.PostedFile.ContentLength;
+                            tam_3 = fuComputadoraFinal_image_Three.PostedFile.ContentLength;
+                            if ((ext == ".png" && tam <= 1048576) && (ext_2 == ".png" && tam_2 <= 1048576) && (ext_3 == ".png" && tam_3 <= 1048576))
+                            {
+                                if (!Directory.Exists(ruta))
+                                {
+                                    Directory.CreateDirectory(ruta);
+                                }
+                                strFilePath = ruta + name;
+                                if (File.Exists(strFilePath))
+                                {
+                                    mensaje = name + ", ya existe!";
+                                    tipo = 1;
+                                }
+                                else
+                                {
+                                    strFilePath = ruta + name_2;
+                                    if (File.Exists(strFilePath))
+                                    {
+                                        mensaje = name_2 + ", ya existe!";
+                                        tipo = 1;
+                                    }
+                                    else
+                                    {
+                                        strFilePath = ruta + name_3;
+                                        if (File.Exists(strFilePath))
+                                        {
+                                            mensaje = name_3 + ", ya existe!";
+                                            tipo = 1;
+                                        }
+                                        else
+                                        {
+                                            id = @"\Resources\cpu\" + name;
+                                            id_2 = @"\Resources\cpu\" + name_2;
+                                            id_3 = @"\Resources\cpu\" + name_3;
+
+                                            strFilePath = ruta + name;
+                                            fuComputadoraFinal_image_One.PostedFile.SaveAs(strFilePath);
+                                            strFilePath = ruta + name_2;
+                                            fuComputadoraFinal_image_Two.PostedFile.SaveAs(strFilePath);
+                                            strFilePath = ruta + name_3;
+                                            fuComputadoraFinal_image_Three.PostedFile.SaveAs(strFilePath);
+
+                                            state = keyBL.AgregarImagenesCompuFinal(new Imagenes_ComFinal() 
+                                            { 
+                                                urlimage_one=id,
+                                                urlimage_two=id_2,
+                                                urlimage_three=id_3,
+                                                F_ComputadoraFinal= txtComputadoraFinal_inv.Text
+                                            },ref mensaje, ref estado);
+                                            if (state)
+                                            {
+                                                titulo = "Computadora Final && sus imaegenes son correctas";
+                                                tipo = 3;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            mensaje = "Click 'Browse' Selecciona la imagen.";
+                            tipo = 4;
+                        }
+                    }
+                    else
+                    {
+                        if (fuComputadoraFinal_image_One.HasFile)
+                        {
+                            ext = Path.GetExtension(fuComputadoraFinal_image_One.FileName).ToLower();
+                            name = fuComputadoraFinal_image_One.FileName;
+                            tam = fuComputadoraFinal_image_One.PostedFile.ContentLength;
+                            if (ext == ".png" && tam <= 1048576)
+                            {
+                                if (!Directory.Exists(ruta))
+                                {
+                                    Directory.CreateDirectory(ruta);
+                                }
+                                strFilePath = ruta + name;
+                                if (File.Exists(strFilePath))
+                                {
+                                    mensaje = name + ", ya existe!";
+                                    titulo = "Lo lamento!!";
+                                    tipo = 1;
+                                }
+                                else
+                                {
+                                    id = @"\Resources\cpu\" + name;
+                                    strFilePath = ruta + name;
+                                    fuComputadoraFinal_image_One.PostedFile.SaveAs(strFilePath);
+
+                                    state = keyBL.AgregarImagenesCompuFinal(new Imagenes_ComFinal()
+                                    {
+                                        urlimage_one = id,
+                                        urlimage_two = "",
+                                        urlimage_three = "",
+                                        F_ComputadoraFinal = txtComputadoraFinal_inv.Text
+                                    }, ref estado, ref mensaje);
+                                    if (state)
+                                    {
+                                        titulo = "Computadora Final & sus imagenes son correctas";
+                                        tipo = 3;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                titulo = "La imagen es muy grande";
+                                tipo = 2;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    titulo = "Lo la mento tú Computadora Final no se agrego verifica tús campos sean correctos";
+                    tipo = 2;
+                }
+                PastPage(2);
+                txtCantDisc_numinv.Text = txtComputadoraFinal_inv.Text;
+            }
+            catch (Exception r)
+            {
+                titulo = "Erro : ";
+                mensaje = mensaje + r;
+                tipo = 2;
+            }
+            Message("COP",titulo,mensaje,tipo);
+        }
+
+        protected void btnCantDisc_Click(object sender, EventArgs e)
+        {
+            string titulo = "", mensaje = "", estado = "";
+            int tipo = 0;
+            Boolean state = false;
+
+            if (txtCantDisc_numinv.Text!="")
+            {
+                try
+                {
+                    state = keyBL.AgregarCantDiscoDuro(new CantDisc()
+                    {
+                        num_inv = txtCantDisc_numinv.Text,
+                        F_Dico = Convert.ToInt32(ddlCantDisc_disc_tipo.SelectedValue)
+                    }, ref estado, ref mensaje);
+                }
+                catch (Exception me)
+                {
+                    mensaje = mensaje + " " + me;
+                }
+                if (state)
+                {
+                    titulo = "Almacenamiento";
+                    tipo = 3;
+                    PastPage();
+                }
+            }
+            else
+            {
+                titulo = "Losentimos !!";
+                mensaje = "Debe tener una número de inventario para que podamos proceder su registro";
+                tipo = 2;
+            }
+            Message("GuardarCant",titulo,mensaje,tipo);
         }
 
     }

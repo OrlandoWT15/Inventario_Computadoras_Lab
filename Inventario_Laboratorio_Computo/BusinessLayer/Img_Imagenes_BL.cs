@@ -47,7 +47,7 @@ namespace BusinessLayer
                     new SqlParameter("@urlimage_one",SqlDbType.VarChar,255),
                     new SqlParameter("@urlimage_two",SqlDbType.VarChar,255),
                     new SqlParameter("@urlimage_three",SqlDbType.VarChar,255),
-                    new SqlParameter("@f_ComputadoraFinal",SqlDbType.Int),
+                    new SqlParameter("@f_ComputadoraFinal",SqlDbType.VarChar,10),
                 };
                 evaluacion[0].Value = newImaCompFinal.urlimage_one;
                 evaluacion[1].Value = newImaCompFinal.urlimage_two;

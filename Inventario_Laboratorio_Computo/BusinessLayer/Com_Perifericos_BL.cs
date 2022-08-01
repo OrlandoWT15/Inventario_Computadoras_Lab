@@ -123,6 +123,51 @@ namespace BusinessLayer
 
             return respuesta;
         }
+        public Boolean MostrarTecladoCompleto(ref string instruccion)
+        {
+            Boolean respuesta;
+            if (instruccion == "")
+            {
+                instruccion = "SELECT t.id_teclado,t.conector,m.Marca" +
+                    " FROM teclado as t" +
+                    " INNER JOIN Marca as m ON t.f_marcat=m.Id_Marca";
+                respuesta = true;
+            }
+            else
+                respuesta = false;
+
+            return respuesta;
+        }
+        public Boolean MostrarMouseCompleto(ref string instruccion)
+        {
+            Boolean respuesta;
+            if (instruccion == "")
+            {
+                instruccion = "SELECT mo.id_mouse,mo.conector,m.Marca" +
+                    " FROM mouse as mo" +
+                    " INNER JOIN Marca as m ON mo.f_marcamouse=m.Id_Marca";
+                respuesta = true;
+            }
+            else
+                respuesta = false;
+
+            return respuesta;
+        }
+        public Boolean MostrarMonitorCompleto(ref string instruccion)
+        {
+            Boolean respuesta;
+            if (instruccion == "")
+            {
+                instruccion = "SELECT mo.id_monitor,mo.conectores,mo.tamano,m.Marca" +
+                    " FROM monitor as mo" +
+                    " INNER JOIN Marca as m ON mo.f_marcam=m.Id_Marca";
+                respuesta = true;
+            }
+            else
+                respuesta = false;
+
+            return respuesta;
+        }
         /*Mostrar*/
 
         /*Actualizar*/

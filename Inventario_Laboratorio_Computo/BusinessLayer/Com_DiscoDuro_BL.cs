@@ -87,7 +87,9 @@ namespace BusinessLayer
             Boolean respuesta;
             if (instruccion == "")
             {
-                instruccion = "SELECT * FROM DiscoDuro";
+                instruccion = "SELECT dd.id_Disco,dd.TipoDisco,dd.conector,dd.Capacidad,ma.Marca,dd.Extra" +
+                    " FROM DiscoDuro as dd" +
+                    " INNER JOIN Marca as ma ON dd.F_MarcaDisco=ma.Id_Marca";
                 respuesta = true;
             }
             else
